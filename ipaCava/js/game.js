@@ -37,6 +37,7 @@ var Game = {
         this.framesCounter = 0
       }
 
+      console.log(this.canvas.width)
       this.moveAll()
       this.drawAll()
       

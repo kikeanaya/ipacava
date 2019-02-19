@@ -10,7 +10,7 @@ function Player(game) {
   this.y = this.game.tileSize * 4
 
   this.ipa = new Image()
-  this.ipa.src = "img/ipa.png"
+  this.ipa.src = "img/gorilla.png"
   
   this.setListeners();
 }
@@ -31,7 +31,7 @@ Player.prototype.setListeners = function() {
     } else if (event.keyCode == this.game.keys.LEFT && this.x > 5) {
         this.direction = 1
         this.x -= this.game.tileSize
-    } else if (event.keyCode == this.game.keys.UP && this.game.background.y < -3) {
+    } else if (event.keyCode == this.game.keys.UP && this.game.background.y < -203) {
         this.game.background.y += this.game.tileSize
         this.game.cave.y += this.game.tileSize
         this.game.enemy.y += this.game.tileSize

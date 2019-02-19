@@ -9,7 +9,8 @@ function Enemy(game) {
     this.y = this.game.tileSize * 5
 
     this.enemy = new Image()
-    this.enemy.src = "img/enemy.png"
+    this.enemy.src = "img/enemy1.png"
+    
 }
 
 Enemy.prototype.draw = function(x, y) {

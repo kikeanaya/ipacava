@@ -6,7 +6,7 @@ function Cave(game) {
 
 
   this.tile = new Image()
-  this.tile.src = "img/new.png"
+  this.tile.src = "img/tile.png"
   
   this.caveMatrix = [
       [,,,,,,,,,,,,,,],
