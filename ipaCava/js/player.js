@@ -4,6 +4,7 @@ function Player(game) {
   this.width = this.game.tileSize
   this.height = this.game.tileSize
 
+  this.health = 100
 
   this.direction = 0 // left = 1, right = 2
   this.x = this.game.tileSize * 5
@@ -17,10 +18,6 @@ function Player(game) {
 
 Player.prototype.draw = function() {
   this.game.ctx.drawImage(this.ipa, this.x, this.y, this.width, this.height)
-}
-
-Player.prototype.move = function() {
-
 }
 
 Player.prototype.setListeners = function() {

@@ -4,7 +4,6 @@ function Cave(game) {
   this.x = 0
   this.y = this.game.tileSize * 5
 
-
   this.tile = new Image()
   this.tile.src = "img/tile.png"
   
@@ -55,6 +54,5 @@ Cave.prototype.draw = function() {
         }
         this.game.ctx.drawImage(this.tile, this.x, this.y+this.game.tileSize, this.game.tileSize, this.game.tileSize)
         this.refY+=this.game.tileSize
-        
     }
 }

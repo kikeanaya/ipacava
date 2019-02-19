@@ -21,7 +21,7 @@ var Game = {
     this.canvas.height = this.height
 
     this.tileSize = this.canvas.width / 15
-    console.log(this.tileSize)
+
     this.start()
   }, 
   start: function () {
@@ -37,12 +37,16 @@ var Game = {
         this.framesCounter = 0
       }
 
-      console.log(this.canvas.width)
-      this.moveAll()
-      this.drawAll()
-      
       if (this.detectEnemyCollision() === true){
         console.log("collision")
+        this.player.health -= 10
+        this.player.x -= this.tileSize
+      }
+
+      this.drawAll()
+
+      if(this.player.health == 0){
+        this.stopGame()
       }
 
     }.bind(this), 1000 / this.fps)
@@ -64,19 +68,17 @@ var Game = {
     this.cave.draw()
     this.player.draw()
     this.enemy.draw()
-    this.ui.draw()
+    this.ui.drawPlayerHealth()
+    this.ui.drawDepth()
   },
-  moveAll: function (){
-  },
-
   detectEnemyCollision: function(){
     var happens
-    console.log("player " + this.player.x)
-    console.log("enemy " + this.enemy.x)
-
       if(this.player.x  >= this.enemy.x-1 && this.player.x <= this.enemy.x+1 && this.player.y  === this.enemy.y ){
         happens = true
       }
   return happens         
+  },
+  stopGame: function(){
+    alert("YOU DIED")
   }
 }
