@@ -33,7 +33,7 @@ Player.prototype.setListeners = function() {
         this.game.cave.y += this.game.tileSize
         this.game.enemy.y += this.game.tileSize
         this.game.depth -= 2
-    } else if (event.keyCode == this.game.keys.DOWN && this.game.background.y > -3200) {
+    } else if (event.keyCode == this.game.keys.DOWN && this.game.background.y > -2900) {
         this.game.background.y -= this.game.tileSize
         this.game.cave.y -= this.game.tileSize
         this.game.depth += 2

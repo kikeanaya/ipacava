@@ -10,7 +10,7 @@ function Ui(game){
 
 Ui.prototype.drawDepth = function (){
     this.game.ctx.fillStyle = "grey"
-    this.game.ctx.fillRect(1279, 632, 120, 25)
+    this.game.ctx.fillRect(1279, 632, 130, 25)
 
     this.game.ctx.font = "20px sans-serif";
     this.game.ctx.fillStyle = "white";

@@ -20,7 +20,7 @@ var Game = {
     this.canvas.width = this.width
     this.canvas.height = this.height
 
-    this.tileSize = this.canvas.width / 15
+    this.tileSize = Math.floor(this.canvas.width / 15)
 
     this.start()
   }, 
