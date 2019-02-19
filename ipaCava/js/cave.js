@@ -6,6 +6,9 @@ function Cave(game) {
 
   this.tile = new Image()
   this.tile.src = "img/tile.png"
+
+  this.brokenTile = new Image()
+  this.brokenTile.src = "img/tile2.png"
   
   this.numberOfHTiles = 15
   this.numberOfVTiles = 30
@@ -19,7 +22,11 @@ Cave.prototype.draw = function() {
             this.game.ctx.drawImage(this.tile, this.refX, this.refY, this.game.tileSize, this.game.tileSize)
             this.refX+=this.game.tileSize
         }
-        this.game.ctx.drawImage(this.tile, this.x, this.y+this.game.tileSize, this.game.tileSize, this.game.tileSize)
         this.refY+=this.game.tileSize
+        this.game.ctx.drawImage(this.tile, this.x, this.y+this.game.tileSize, this.game.tileSize, this.game.tileSize)
     }
+}
+
+Cave.prototype.drawBrokenTile = function() {
+    this.game.ctx.drawImage(this.brokenTile, this.game.player.x, this.game.player.y + this.game.tileSize, this.game.tileSize, this.game.tileSize)
 }

@@ -43,7 +43,7 @@ var Game = {
       }
 
       this.drawAll()
-      this.mapTracker.locateInMatrix()
+      this.mapTracker.setPlayerLocation()
 
       if(this.player.health == 0){
         this.stopGame()
@@ -81,7 +81,7 @@ var Game = {
   },
   detectGroundCollision: function(){
     var happens
-      if(this.player.x  >= this.enemy.x-1 && this.player.x <= this.enemy.x+1 && this.player.y  === this.enemy.y ){
+      if(this.mapTrackerx  >= this.enemy.x-1 && this.player.x <= this.enemy.x+1 && this.player.y  === this.enemy.y ){
         happens = true
       }
   return happens         
