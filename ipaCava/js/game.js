@@ -49,6 +49,7 @@ var Game = {
         this.stopGame()
       }
 
+
     }.bind(this), 1000 / this.fps)
   },
   reset: function () {
