@@ -7,7 +7,7 @@ function Background(game) {
   this.x = 0
   this.y = -200
 
-  this.width = this.game.canvas.width
+  this.width = this.game.tileSize * 15
   this.height = this.game.canvas.height
 }
 

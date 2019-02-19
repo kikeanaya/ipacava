@@ -38,12 +38,12 @@ var Game = {
       }
 
       if (this.detectEnemyCollision() === true){
-        console.log("collision")
         this.player.health -= 10
         this.player.x -= this.tileSize
       }
 
       this.drawAll()
+      this.mapTracker.locateInMatrix()
 
       if(this.player.health == 0){
         this.stopGame()
@@ -57,6 +57,7 @@ var Game = {
     this.cave = new Cave(this)
     this.enemy = new Enemy(this)
     this.ui = new Ui(this)
+    this.mapTracker = new MapTracker(this)
     this.framesCounter = 0
     this.depth = 0
   },
@@ -72,6 +73,13 @@ var Game = {
     this.ui.drawDepth()
   },
   detectEnemyCollision: function(){
+    var happens
+      if(this.player.x  >= this.enemy.x-1 && this.player.x <= this.enemy.x+1 && this.player.y  === this.enemy.y ){
+        happens = true
+      }
+  return happens         
+  },
+  detectGroundCollision: function(){
     var happens
       if(this.player.x  >= this.enemy.x-1 && this.player.x <= this.enemy.x+1 && this.player.y  === this.enemy.y ){
         happens = true

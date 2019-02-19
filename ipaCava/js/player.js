@@ -25,19 +25,28 @@ Player.prototype.setListeners = function() {
     if (event.keyCode === this.game.keys.RIGHT && this.x<this.game.canvas.width - this.width-30) {
         this.direction = 2
         this.x += this.game.tileSize
+        this.game.mapTracker.updateToZero()
+        this.game.mapTracker.playerLocationX +=1
     } else if (event.keyCode == this.game.keys.LEFT && this.x > 5) {
         this.direction = 1
         this.x -= this.game.tileSize
+        this.game.mapTracker.updateToZero()
+        this.game.mapTracker.playerLocationX -=1
     } else if (event.keyCode == this.game.keys.UP && this.game.background.y < -203) {
         this.game.background.y += this.game.tileSize
         this.game.cave.y += this.game.tileSize
         this.game.enemy.y += this.game.tileSize
         this.game.depth -= 2
+        this.game.mapTracker.updateToZero()
+        this.game.mapTracker.playerLocationY -=1
     } else if (event.keyCode == this.game.keys.DOWN && this.game.background.y > -2900) {
         this.game.background.y -= this.game.tileSize
         this.game.cave.y -= this.game.tileSize
         this.game.depth += 2
         this.game.enemy.y -= this.game.tileSize
+        this.game.mapTracker.updateToZero()
+        this.game.mapTracker.playerLocationY +=1
+
     } else if(event.keyCode == this.game.keys.DIG){
         console.log("dig in front of last direction left or right")
     }
