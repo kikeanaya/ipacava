@@ -86,6 +86,7 @@ Player.prototype.setListeners = function() {
           console.log("not moving the player ")
         } else{
         this.refToDig = this.game.mapTracker.checkTileStatus(this.direction)
+        console.log(this.refToDig)
         if (this.refToDig === 3){
           this.game.cave.drawBrokenTile(this.direction)
         } else if (this.refToDig === 4){
@@ -97,7 +98,10 @@ Player.prototype.setListeners = function() {
           this.game.enemy.y -= this.game.tileSize
           this.game.mapTracker.updateToFour()
           this.game.mapTracker.playerLocationY +=1
-        } else {
+        } else if(this.refToDig === 7){
+          this.game.cave.drawBrokenJewel(this.direction)
+        }
+        else{
           this.game.background.y -= this.game.tileSize
           this.game.cave.y -= this.game.tileSize
           this.game.depth += 2

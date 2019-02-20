@@ -7,6 +7,12 @@ function Cave(game) {
   this.tile = new Image()
   this.tile.src = "img/tile.png"
 
+  this.jewelTile = new Image()
+  this.jewelTile.src = "img/jewelTile.png"
+
+  this.jewelTile2 = new Image()
+  this.jewelTile2.src = "img/jewelTile2.png"
+
   this.brokenTile = new Image()
   this.brokenTile.src = "img/tile2.png"
 
@@ -46,6 +52,12 @@ Cave.prototype.draw = function() {
                 this.game.ctx.drawImage(this.emptyTile, this.refX, this.refY, this.game.tileSize, this.game.tileSize)
                 this.game.ctx.drawImage(this.enemy, this.game.enemy.x, this.game.enemy.y, this.game.tileSize, this.game.tileSize)
                 this.refX+=this.game.tileSize
+            } else if(this.game.mapTracker.caveMatrix[i][j] === 6){
+                this.game.ctx.drawImage(this.jewelTile, this.refX, this.refY, this.game.tileSize, this.game.tileSize)
+                this.refX+=this.game.tileSize
+            } else if(this.game.mapTracker.caveMatrix[i][j] === 7){
+                this.game.ctx.drawImage(this.jewelTile2, this.refX, this.refY, this.game.tileSize, this.game.tileSize)
+                this.refX+=this.game.tileSize
             }
         }
         this.refY+=this.game.tileSize
@@ -60,11 +72,23 @@ Cave.prototype.drawBrokenTile = function(direction) {
     if(direction === 2){ //when pressing right
         this.game.ctx.drawImage(this.brokenTile, this.game.player.x + this.game.tileSize, this.game.player.y, this.game.tileSize, this.game.tileSize)
     }
-    if(direction === 2){ //when pressing left
+    if(direction === 4){ //when pressing left
         this.game.ctx.drawImage(this.brokenTile, this.game.player.x - this.game.tileSize, this.game.player.y, this.game.tileSize, this.game.tileSize)
     }
 }
 
 Cave.prototype.drawEmptyTile = function() {
     this.game.ctx.drawImage(this.emptyTile, this.game.player.x, this.game.player.y, this.game.tileSize, this.game.tileSize)
+}
+
+Cave.prototype.drawBrokenJewel = function(direction) {
+    if(direction === 3){ //when pressing down
+        this.game.ctx.drawImage(this.jewelTile2, this.game.player.x, this.game.player.y + this.game.tileSize, this.game.tileSize, this.game.tileSize)
+    }
+    if(direction === 2){ //when pressing right
+        this.game.ctx.drawImage(this.jewelTile2, this.game.player.x + this.game.tileSize, this.game.player.y, this.game.tileSize, this.game.tileSize)
+    }
+    if(direction === 4){ //when pressing left
+        this.game.ctx.drawImage(this.jewelTile2, this.game.player.x - this.game.tileSize, this.game.player.y, this.game.tileSize, this.game.tileSize)
+    }   
 }

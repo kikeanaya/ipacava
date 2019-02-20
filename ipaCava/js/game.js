@@ -42,7 +42,6 @@ var Game = {
 
       this.drawAll()
 
-      console.log(this.mapTracker.caveMatrix)
       if(this.player.health == 0){
         this.stopGame()
       }

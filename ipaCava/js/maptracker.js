@@ -14,11 +14,11 @@ function MapTracker(game){
         [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],  // 0 = espacio vacío
         [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],  // 1 = ubicación del jugador
         [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],  // 2 = tile sin tocar
-        [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],  // 3 = tile con 1 golpe
-        [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],  // 4 = espacio sin colisión pero con fondo de caverna
+        [2,2,2,2,2,2,2,2,6,2,2,2,2,2,2],  // 3 = tile con 1 golpe
+        [2,2,2,2,2,6,2,2,2,2,2,2,2,2,2],  // 4 = espacio sin colisión pero con fondo de caverna
         [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],  // 5 = enemigo
-        [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
-        [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
+        [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],  // 6 = joya sin golpe
+        [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],  // 7 = joya con 1 golpe
         [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
         [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
         [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
@@ -99,6 +99,10 @@ MapTracker.prototype.checkTileStatus = function(direction) {
     if(this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] === 2){
         this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] = 3
     } else if(this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] === 3) {
+        this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] = 4
+    } else if(this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] === 6){
+        this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] = 7
+    } else if(this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] === 7) {
         this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] = 4
     }
     return this.caveMatrix[this.playerLocationY + 1][this.playerLocationX]
