@@ -15,7 +15,6 @@ function Player(game) {
   this.setListeners();
 }
 
-
 Player.prototype.setListeners = function() {
   document.onkeydown = function(event) {
     
@@ -23,7 +22,6 @@ Player.prototype.setListeners = function() {
         this.direction = 2
         if(this.game.mapTracker.checkEnemyRight() === true){
           this.game.player.health -= 10  
-          console.log("not moving the player ")
         } else{
         this.refToDig = this.game.mapTracker.checkTileStatus(this.direction)
         if (this.refToDig === 3){
@@ -47,7 +45,6 @@ Player.prototype.setListeners = function() {
         this.direction = 4
         if(this.game.mapTracker.checkEnemyLeft() === true){
           this.game.player.health -= 10  
-          console.log("not moving the player ")
         } else{
         this.refToDig = this.game.mapTracker.checkTileStatus(this.direction)
 
@@ -67,16 +64,12 @@ Player.prototype.setListeners = function() {
           this.game.mapTracker.playerLocationX -=1
         }
       }
-      
-
     } else if (event.keyCode == this.game.keys.UP && this.game.background.y < -203) {
         this.direction = 1
         if(this.game.mapTracker.checkEnemyUp() === true){
           this.game.player.health -= 10  
-          console.log("not moving the player ")
         } else{
           this.refToDig = this.game.mapTracker.checkTileStatus(this.direction)
-          console.log(this.refToDig)
           if (this.refToDig === 3){
             this.game.cave.drawBrokenTile(this.direction)
           } else if (this.refToDig === 4){
@@ -103,10 +96,8 @@ Player.prototype.setListeners = function() {
         this.direction = 3
         if(this.game.mapTracker.checkEnemyDown() === true){
           this.game.player.health -= 10  
-          console.log("not moving the player ")
         } else{
         this.refToDig = this.game.mapTracker.checkTileStatus(this.direction)
-        console.log(this.refToDig)
         if (this.refToDig === 3){
           this.game.cave.drawBrokenTile(this.direction)
         } else if (this.refToDig === 4){
@@ -130,7 +121,6 @@ Player.prototype.setListeners = function() {
           this.game.mapTracker.playerLocationY +=1
         }
       }
-
     } else if(event.keyCode == this.game.keys.DIG){
         console.log("dig in front of last direction left or right")
     }

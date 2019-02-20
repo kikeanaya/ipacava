@@ -58,6 +58,7 @@ var Game = {
     this.mapTracker = new MapTracker(this)
     this.framesCounter = 0
     this.depth = 0
+    this.money = 0
   },
   clear: function () {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
@@ -67,6 +68,7 @@ var Game = {
     this.cave.draw()
     this.ui.drawPlayerHealth()
     this.ui.drawDepth()
+    this.ui.drawMoney()
   },
   detectGroundCollision: function(){
     var happens
