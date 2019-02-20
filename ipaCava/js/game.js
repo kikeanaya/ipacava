@@ -7,7 +7,7 @@ var Game = {
     RIGHT : 39,
     UP : 38,
     LEFT : 37,
-    DIG : 88
+    SHOP : 83
   },
   init: function(id){
     this.canvas = document.getElementById(id)
@@ -62,6 +62,7 @@ var Game = {
     this.framesCounter = 0
     this.depth = 0
     this.money = 0
+    this.menuActivated = 0 // 0: not activated, 1: activated
   },
   clear: function () {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
@@ -72,6 +73,10 @@ var Game = {
     this.ui.drawPlayerHealth()
     this.ui.drawDepth()
     this.ui.drawMoney()
+
+    if (this.menuActivated === 1){
+      this.ui.drawShop()
+    }
   },
   detectGroundCollision: function(){
     var happens

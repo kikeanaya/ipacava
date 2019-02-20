@@ -121,8 +121,12 @@ Player.prototype.setListeners = function() {
           this.game.mapTracker.playerLocationY +=1
         }
       }
-    } else if(event.keyCode == this.game.keys.DIG){
-        console.log("dig in front of last direction left or right")
+    } else if(event.keyCode == this.game.keys.SHOP){
+      if(this.game.menuActivated === 1){
+        this.game.menuActivated = 0
+      } else{
+      this.game.menuActivated = 1
+      }
     }
   }.bind(this)
 }
