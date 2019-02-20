@@ -71,13 +71,27 @@ Player.prototype.setListeners = function() {
           this.game.player.health -= 10  
           console.log("not moving the player ")
         } else{
-        this.game.background.y += this.game.tileSize
-        this.game.cave.y += this.game.tileSize
-        this.game.enemy.y += this.game.tileSize
-        this.game.depth -= 2
-        this.game.mapTracker.updateToFour()
-        this.game.mapTracker.playerLocationY -=1
-
+          this.refToDig = this.game.mapTracker.checkTileStatus(this.direction)
+          console.log(this.refToDig)
+          if (this.refToDig === 3){
+            this.game.cave.drawBrokenTile(this.direction)
+          } else if (this.refToDig === 4){
+            this.game.cave.drawEmptyTile(this.direction)
+  
+            this.game.background.y += this.game.tileSize
+            this.game.cave.y += this.game.tileSize
+            this.game.enemy.y += this.game.tileSize
+            this.game.depth -= 2
+            this.game.mapTracker.updateToFour()
+            this.game.mapTracker.playerLocationY -=1
+          } else {
+            this.game.background.y += this.game.tileSize
+            this.game.cave.y += this.game.tileSize
+            this.game.enemy.y += this.game.tileSize
+            this.game.depth -= 2
+            this.game.mapTracker.updateToFour()
+            this.game.mapTracker.playerLocationY -=1
+          } 
       }
     } else if (event.keyCode == this.game.keys.DOWN && this.game.background.y > -2900) {
         this.direction = 3

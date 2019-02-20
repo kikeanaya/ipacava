@@ -96,16 +96,25 @@ MapTracker.prototype.checkEnemyLeft = function() {
 
 MapTracker.prototype.checkTileStatus = function(direction) {
     if(direction===3){ //Dirección hacia abajo
-    if(this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] === 2){
-        this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] = 3
-    } else if(this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] === 3) {
-        this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] = 4
-    } else if(this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] === 6){
-        this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] = 7
-    } else if(this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] === 7) {
-        this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] = 4
-    }
+        if(this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] === 2){
+            this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] = 3
+        } else if(this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] === 3) {
+            this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] = 4
+        } else if(this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] === 6){
+            this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] = 7
+        } else if(this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] === 7) {
+            this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] = 4
+        }
     return this.caveMatrix[this.playerLocationY + 1][this.playerLocationX]
+    }
+
+    if(direction===1){ //Dirección hacia arriba
+        if(this.caveMatrix[this.playerLocationY - 1][this.playerLocationX] === 2){
+            this.caveMatrix[this.playerLocationY - 1][this.playerLocationX] = 3
+        } else if(this.caveMatrix[this.playerLocationY - 1][this.playerLocationX] === 3) {
+            this.caveMatrix[this.playerLocationY - 1][this.playerLocationX] = 4
+        }
+    return this.caveMatrix[this.playerLocationY - 1][this.playerLocationX]
     }
 
     if(direction===2){ //Dirección hacia derecha
@@ -116,12 +125,13 @@ MapTracker.prototype.checkTileStatus = function(direction) {
         }
     return this.caveMatrix[this.playerLocationY][this.playerLocationX+1]
     }
+
     if(direction===4){ //Dirección hacia izquierda
         if(this.caveMatrix[this.playerLocationY][this.playerLocationX-1] === 2){
             this.caveMatrix[this.playerLocationY][this.playerLocationX-1] = 3
         } else if(this.caveMatrix[this.playerLocationY][this.playerLocationX-1] === 3) {
             this.caveMatrix[this.playerLocationY][this.playerLocationX-1] = 4
-        }
+    }
     return this.caveMatrix[this.playerLocationY][this.playerLocationX-1]
     }
 }
