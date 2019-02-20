@@ -12,15 +12,9 @@ function Player(game) {
   this.x = this.game.tileSize * 5
   this.y = this.game.tileSize * 4
 
-  this.ipa = new Image()
-  this.ipa.src = "img/gorilla.png"
-  
   this.setListeners();
 }
 
-Player.prototype.draw = function() {
-  this.game.ctx.drawImage(this.ipa, this.x, this.y, this.width, this.height)
-}
 
 Player.prototype.setListeners = function() {
   document.onkeydown = function(event) {

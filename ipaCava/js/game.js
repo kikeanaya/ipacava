@@ -71,7 +71,6 @@ var Game = {
   drawAll: function(){
     this.background.draw()
     this.cave.draw()
-    this.player.draw()
     this.ui.drawPlayerHealth()
     this.ui.drawDepth()
   },

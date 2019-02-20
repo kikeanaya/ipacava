@@ -55,9 +55,6 @@ MapTracker.prototype.setPlayerLocation = function() {
 }
 
 MapTracker.prototype.setEnemyLocation = function() {
-    console.log(this.enemyLocationX)
-
-    console.log(this.enemyLocationY)
     this.caveMatrix[this.enemyLocationY][this.enemyLocationX] = 5
 }
 

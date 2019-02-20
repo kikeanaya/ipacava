@@ -6,7 +6,4 @@ function Enemy(game) {
 
     this.x = this.game.tileSize * 10
     this.y = this.game.tileSize * 5
-
-    this.enemy = new Image()
-    this.enemy.src = "img/enemy1.png"  
 }
