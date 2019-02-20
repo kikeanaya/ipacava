@@ -34,6 +34,8 @@ Player.prototype.setListeners = function() {
           this.x += this.game.tileSize
           this.game.mapTracker.updateToFour()
           this.game.mapTracker.playerLocationX +=1
+        } else if(this.refToDig === 7){
+          this.game.cave.drawBrokenJewel(this.direction)
         } else {
           this.x += this.game.tileSize
           this.game.mapTracker.updateToFour()
@@ -57,6 +59,8 @@ Player.prototype.setListeners = function() {
           this.x -= this.game.tileSize
           this.game.mapTracker.updateToFour()
           this.game.mapTracker.playerLocationX -=1
+        } else if(this.refToDig === 7){
+          this.game.cave.drawBrokenJewel(this.direction)
         } else {
           this.x -= this.game.tileSize
           this.game.mapTracker.updateToFour()
@@ -84,7 +88,9 @@ Player.prototype.setListeners = function() {
             this.game.depth -= 2
             this.game.mapTracker.updateToFour()
             this.game.mapTracker.playerLocationY -=1
-          } else {
+          } else if(this.refToDig === 7){
+            this.game.cave.drawBrokenJewel(this.direction)
+          }else {
             this.game.background.y += this.game.tileSize
             this.game.cave.y += this.game.tileSize
             this.game.enemy.y += this.game.tileSize

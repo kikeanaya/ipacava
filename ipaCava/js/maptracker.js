@@ -113,6 +113,10 @@ MapTracker.prototype.checkTileStatus = function(direction) {
             this.caveMatrix[this.playerLocationY - 1][this.playerLocationX] = 3
         } else if(this.caveMatrix[this.playerLocationY - 1][this.playerLocationX] === 3) {
             this.caveMatrix[this.playerLocationY - 1][this.playerLocationX] = 4
+        } else if(this.caveMatrix[this.playerLocationY - 1][this.playerLocationX] === 6){
+            this.caveMatrix[this.playerLocationY - 1][this.playerLocationX] = 7
+        } else if(this.caveMatrix[this.playerLocationY - 1][this.playerLocationX] === 7) {
+            this.caveMatrix[this.playerLocationY - 1][this.playerLocationX] = 4
         }
     return this.caveMatrix[this.playerLocationY - 1][this.playerLocationX]
     }
@@ -121,6 +125,10 @@ MapTracker.prototype.checkTileStatus = function(direction) {
         if(this.caveMatrix[this.playerLocationY][this.playerLocationX+1] === 2){
             this.caveMatrix[this.playerLocationY][this.playerLocationX+1] = 3
         } else if(this.caveMatrix[this.playerLocationY][this.playerLocationX+1] === 3) {
+            this.caveMatrix[this.playerLocationY][this.playerLocationX+1] = 4
+        } else if(this.caveMatrix[this.playerLocationY][this.playerLocationX+1] === 6){
+            this.caveMatrix[this.playerLocationY][this.playerLocationX+1] = 7
+        } else if(this.caveMatrix[this.playerLocationY][this.playerLocationX+1] === 7) {
             this.caveMatrix[this.playerLocationY][this.playerLocationX+1] = 4
         }
     return this.caveMatrix[this.playerLocationY][this.playerLocationX+1]
@@ -131,7 +139,11 @@ MapTracker.prototype.checkTileStatus = function(direction) {
             this.caveMatrix[this.playerLocationY][this.playerLocationX-1] = 3
         } else if(this.caveMatrix[this.playerLocationY][this.playerLocationX-1] === 3) {
             this.caveMatrix[this.playerLocationY][this.playerLocationX-1] = 4
-    }
+        } else if(this.caveMatrix[this.playerLocationY][this.playerLocationX-1] === 6){
+            this.caveMatrix[this.playerLocationY][this.playerLocationX-1] = 7
+        } else if(this.caveMatrix[this.playerLocationY][this.playerLocationX-1] === 7) {
+            this.caveMatrix[this.playerLocationY][this.playerLocationX-1] = 4
+        }
     return this.caveMatrix[this.playerLocationY][this.playerLocationX-1]
     }
 }

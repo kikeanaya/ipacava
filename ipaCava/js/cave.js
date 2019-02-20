@@ -91,4 +91,7 @@ Cave.prototype.drawBrokenJewel = function(direction) {
     if(direction === 4){ //when pressing left
         this.game.ctx.drawImage(this.jewelTile2, this.game.player.x - this.game.tileSize, this.game.player.y, this.game.tileSize, this.game.tileSize)
     }   
+    if(direction === 1){ //when pressing left
+        this.game.ctx.drawImage(this.jewelTile2, this.game.player.x, this.game.player.y - this.game.tileSize, this.game.tileSize, this.game.tileSize)
+    }   
 }
