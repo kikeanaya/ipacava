@@ -2,7 +2,7 @@ function MapTracker(game){
     this.game = game
 
     this.playerLocationX = this.game.player.x / this.game.tileSize
-    this.playerLocationY = 0
+    this.playerLocationY = 1
 
     this.enemyLocationX = this.game.enemy.x / this.game.tileSize
     this.enemyLocationY = this.game.enemy.y/this.game.tileSize -4
@@ -58,10 +58,39 @@ MapTracker.prototype.setEnemyLocation = function() {
     this.caveMatrix[this.enemyLocationY][this.enemyLocationX] = 5
 }
 
-MapTracker.prototype.checkEnemyCollision = function() {
-    if(this.caveMatrix[this.playerLocationY][this.playerLocationX+1] === 5 ){ //WILL CLASH IF PLAYER MOVES LEFT
+MapTracker.prototype.checkEnemyUp = function() {
+    if(this.caveMatrix[this.playerLocationY-1][this.playerLocationX] === 5 ){ //WILL CLASH IF PLAYER MOVES RIGHT
         this.enemyClash = true
-    } else(this.enemyClash = false)
+    } else{
+        (this.enemyClash = false)
+    }
+    return this.enemyClash
+}
+
+MapTracker.prototype.checkEnemyRight = function() {
+    if(this.caveMatrix[this.playerLocationY][this.playerLocationX+1] === 5 ){ //WILL CLASH IF PLAYER MOVES RIGHT
+        this.enemyClash = true
+    } else{
+        (this.enemyClash = false)
+    }
+    return this.enemyClash
+}
+
+MapTracker.prototype.checkEnemyDown = function() {
+    if(this.caveMatrix[this.playerLocationY+1][this.playerLocationX] === 5 ){ //WILL CLASH IF PLAYER MOVES RIGHT
+        this.enemyClash = true
+    } else{
+        (this.enemyClash = false)
+    }
+    return this.enemyClash
+}
+
+MapTracker.prototype.checkEnemyLeft = function() {
+    if(this.caveMatrix[this.playerLocationY][this.playerLocationX-1] === 5 ){ //WILL CLASH IF PLAYER MOVES RIGHT
+        this.enemyClash = true
+    } else{
+        (this.enemyClash = false)
+    }
     return this.enemyClash
 }
 
