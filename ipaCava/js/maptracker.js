@@ -4,6 +4,9 @@ function MapTracker(game){
     this.playerLocationX = this.game.player.x / this.game.tileSize
     this.playerLocationY = 0
 
+    this.enemyLocationX = this.game.enemy.x / this.game.tileSize
+    this.enemyLocationY = this.game.enemy.y/this.game.tileSize -4
+
     this.digDirection = 0
 
     this.caveMatrix = [
@@ -13,7 +16,7 @@ function MapTracker(game){
         [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],  // 2 = tile sin tocar
         [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],  // 3 = tile con 1 golpe
         [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],  // 4 = espacio sin colisión pero con fondo de caverna
-        [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
+        [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],  // 5 = enemigo
         [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
         [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
         [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
@@ -49,6 +52,13 @@ MapTracker.prototype.updateToFour = function() {
 
 MapTracker.prototype.setPlayerLocation = function() {
     this.caveMatrix[this.playerLocationY][this.playerLocationX] = 1
+}
+
+MapTracker.prototype.setEnemyLocation = function() {
+    console.log(this.enemyLocationX)
+
+    console.log(this.enemyLocationY)
+    this.caveMatrix[this.enemyLocationY][this.enemyLocationX] = 5
 }
 
 MapTracker.prototype.checkTileStatus = function(direction) {

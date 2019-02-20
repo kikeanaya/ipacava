@@ -41,9 +41,12 @@ var Game = {
         this.player.health -= 10
         this.player.x -= this.tileSize
       }
+      this.mapTracker.setPlayerLocation()
+      this.mapTracker.setEnemyLocation()
 
       this.drawAll()
-      this.mapTracker.setPlayerLocation()
+
+      console.log(this.mapTracker.caveMatrix)
 
       if(this.player.health == 0){
         this.stopGame()
@@ -69,7 +72,6 @@ var Game = {
     this.background.draw()
     this.cave.draw()
     this.player.draw()
-    this.enemy.draw()
     this.ui.drawPlayerHealth()
     this.ui.drawDepth()
   },

@@ -10,7 +10,3 @@ function Enemy(game) {
     this.enemy = new Image()
     this.enemy.src = "img/enemy1.png"  
 }
-
-Enemy.prototype.draw = function(x, y) {
-    this.game.ctx.drawImage(this.enemy, this.x, this.y, this.width, this.height)
-}

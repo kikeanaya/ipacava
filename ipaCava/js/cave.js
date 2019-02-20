@@ -13,6 +13,12 @@ function Cave(game) {
   this.emptyTile = new Image()
   this.emptyTile.src = "img/emptyTile.png"
   
+  this.enemy = new Image()
+  this.enemy.src = "img/enemy1.png"
+
+  this.ipa = new Image()
+  this.ipa.src = "img/gorilla.png"
+
   this.numberOfHTiles = 15
   this.numberOfVTiles = 30
 }
@@ -34,6 +40,10 @@ Cave.prototype.draw = function() {
                 this.refX+=this.game.tileSize
             } else if(this.game.mapTracker.caveMatrix[i][j] === 4){
                 this.game.ctx.drawImage(this.emptyTile, this.refX, this.refY, this.game.tileSize, this.game.tileSize)
+                this.refX+=this.game.tileSize
+            } else if(this.game.mapTracker.caveMatrix[i][j] === 5){
+                this.game.ctx.drawImage(this.tile, this.refX, this.refY, this.game.tileSize, this.game.tileSize)
+                this.game.ctx.drawImage(this.enemy, this.game.enemy.x, this.game.enemy.y, this.game.tileSize, this.game.tileSize)
                 this.refX+=this.game.tileSize
             }
         }
