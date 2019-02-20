@@ -104,6 +104,8 @@ MapTracker.prototype.checkTileStatus = function(direction) {
             this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] = 7
         } else if(this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] === 7) {
             this.game.money += 100
+            this.game.moneySound.play()
+
             this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] = 4
         }
     return this.caveMatrix[this.playerLocationY + 1][this.playerLocationX]
@@ -118,6 +120,8 @@ MapTracker.prototype.checkTileStatus = function(direction) {
             this.caveMatrix[this.playerLocationY - 1][this.playerLocationX] = 7
         } else if(this.caveMatrix[this.playerLocationY - 1][this.playerLocationX] === 7) {
             this.game.money += 100
+            this.game.moneySound.play()
+
             this.caveMatrix[this.playerLocationY - 1][this.playerLocationX] = 4
         }
     return this.caveMatrix[this.playerLocationY - 1][this.playerLocationX]
@@ -132,6 +136,8 @@ MapTracker.prototype.checkTileStatus = function(direction) {
             this.caveMatrix[this.playerLocationY][this.playerLocationX+1] = 7
         } else if(this.caveMatrix[this.playerLocationY][this.playerLocationX+1] === 7) {
             this.game.money += 100
+            this.game.moneySound.play()
+
             this.caveMatrix[this.playerLocationY][this.playerLocationX+1] = 4
         }
     return this.caveMatrix[this.playerLocationY][this.playerLocationX+1]
@@ -146,6 +152,8 @@ MapTracker.prototype.checkTileStatus = function(direction) {
             this.caveMatrix[this.playerLocationY][this.playerLocationX-1] = 7
         } else if(this.caveMatrix[this.playerLocationY][this.playerLocationX-1] === 7) {
             this.game.money += 100
+            this.game.moneySound.play()
+
             this.caveMatrix[this.playerLocationY][this.playerLocationX-1] = 4
         }
     return this.caveMatrix[this.playerLocationY][this.playerLocationX-1]

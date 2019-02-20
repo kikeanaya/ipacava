@@ -22,6 +22,9 @@ var Game = {
 
     this.tileSize = Math.floor(this.canvas.width / 15)
 
+    this.moneySound = new Audio("snd/money.wav");
+
+
     this.start()
   }, 
   start: function () {
