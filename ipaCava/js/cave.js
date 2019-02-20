@@ -20,7 +20,7 @@ function Cave(game) {
   this.ipa.src = "img/gorilla.png"
 
   this.numberOfHTiles = 15
-  this.numberOfVTiles = 30
+  this.numberOfVTiles = 30  
 }
 
 Cave.prototype.draw = function() {   
@@ -30,6 +30,7 @@ Cave.prototype.draw = function() {
         for(var j=0;j<this.game.mapTracker.caveMatrix[i].length;j++){
                         
             if(this.game.mapTracker.caveMatrix[i][j] === 1){
+                this.game.ctx.drawImage(this.emptyTile, this.refX, this.refY, this.game.tileSize, this.game.tileSize)
                 this.game.ctx.drawImage(this.ipa, this.game.player.x, this.game.player.y, this.game.tileSize, this.game.tileSize)
                 this.refX+=this.game.tileSize
             } else if(this.game.mapTracker.caveMatrix[i][j] === 2){
@@ -42,7 +43,7 @@ Cave.prototype.draw = function() {
                 this.game.ctx.drawImage(this.emptyTile, this.refX, this.refY, this.game.tileSize, this.game.tileSize)
                 this.refX+=this.game.tileSize
             } else if(this.game.mapTracker.caveMatrix[i][j] === 5){
-                this.game.ctx.drawImage(this.tile, this.refX, this.refY, this.game.tileSize, this.game.tileSize)
+                this.game.ctx.drawImage(this.emptyTile, this.refX, this.refY, this.game.tileSize, this.game.tileSize)
                 this.game.ctx.drawImage(this.enemy, this.game.enemy.x, this.game.enemy.y, this.game.tileSize, this.game.tileSize)
                 this.refX+=this.game.tileSize
             }
