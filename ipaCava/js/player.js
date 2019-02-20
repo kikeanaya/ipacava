@@ -21,7 +21,10 @@ Player.prototype.setListeners = function() {
     
     if (event.keyCode === this.game.keys.RIGHT && this.x<this.game.canvas.width - this.width-30) {
         this.direction = 2
-        
+        if(this.game.mapTracker.checkEnemyCollision() === true){
+          this.game.player.health -= 10  
+          console.log("not moving the player ")
+        } else{
         this.refToDig = this.game.mapTracker.checkTileStatus(this.direction)
         if (this.refToDig === 3){
           this.game.cave.drawBrokenTile(this.direction)
@@ -36,6 +39,7 @@ Player.prototype.setListeners = function() {
           this.game.mapTracker.updateToFour()
           this.game.mapTracker.playerLocationX +=1
         }
+      }
 
     } else if (event.keyCode == this.game.keys.LEFT && this.x > 5) {
         this.direction = 4
@@ -55,6 +59,7 @@ Player.prototype.setListeners = function() {
           this.game.mapTracker.updateToFour()
           this.game.mapTracker.playerLocationX -=1
         }
+      
 
     } else if (event.keyCode == this.game.keys.UP && this.game.background.y < -203) {
         this.direction = 1

@@ -28,12 +28,11 @@ Cave.prototype.draw = function() {
     for(var i= 1;i<this.game.mapTracker.caveMatrix.length;i++){
         this.refX = 0
         for(var j=0;j<this.game.mapTracker.caveMatrix[i].length;j++){
+                        
             if(this.game.mapTracker.caveMatrix[i][j] === 1){
-                this.game.ctx.drawImage(this.tile, this.refX, this.refY, this.game.tileSize, this.game.tileSize)
                 this.game.ctx.drawImage(this.ipa, this.game.player.x, this.game.player.y, this.game.tileSize, this.game.tileSize)
                 this.refX+=this.game.tileSize
-            }
-            if(this.game.mapTracker.caveMatrix[i][j] === 2){
+            } else if(this.game.mapTracker.caveMatrix[i][j] === 2){
                 this.game.ctx.drawImage(this.tile, this.refX, this.refY, this.game.tileSize, this.game.tileSize)
                 this.refX+=this.game.tileSize
             } else if(this.game.mapTracker.caveMatrix[i][j] === 3){

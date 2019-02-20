@@ -7,7 +7,7 @@ function MapTracker(game){
     this.enemyLocationX = this.game.enemy.x / this.game.tileSize
     this.enemyLocationY = this.game.enemy.y/this.game.tileSize -4
 
-    this.digDirection = 0
+    this.enemyClash = false
 
     this.caveMatrix = [
         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],  // Leyenda:
@@ -56,6 +56,13 @@ MapTracker.prototype.setPlayerLocation = function() {
 
 MapTracker.prototype.setEnemyLocation = function() {
     this.caveMatrix[this.enemyLocationY][this.enemyLocationX] = 5
+}
+
+MapTracker.prototype.checkEnemyCollision = function() {
+    if(this.caveMatrix[this.playerLocationY][this.playerLocationX+1] === 5 ){ //WILL CLASH IF PLAYER MOVES LEFT
+        this.enemyClash = true
+    } else(this.enemyClash = false)
+    return this.enemyClash
 }
 
 MapTracker.prototype.checkTileStatus = function(direction) {
