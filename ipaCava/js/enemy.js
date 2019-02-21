@@ -19,17 +19,27 @@ Enemy.prototype.moveEnemy = function(){
             this.game.mapTracker.caveMatrix[this.game.mapTracker.enemy1LocationY][this.game.mapTracker.enemy1LocationX] = 4
             this.game.mapTracker.enemy1LocationY -=1
             this.enemy1y-=this.game.tileSize
+        }else if(this.game.mapTracker.caveMatrix[this.game.mapTracker.enemy1LocationY - 1][this.game.mapTracker.enemy1LocationX] === 2){
+            this.game.mapTracker.caveMatrix[this.game.mapTracker.enemy1LocationY - 1][this.game.mapTracker.enemy1LocationX] = 3
+        }else if(this.game.mapTracker.caveMatrix[this.game.mapTracker.enemy1LocationY - 1][this.game.mapTracker.enemy1LocationX] === 3){
+            this.game.mapTracker.caveMatrix[this.game.mapTracker.enemy1LocationY][this.game.mapTracker.enemy1LocationX] = 4
+            this.game.mapTracker.enemy1LocationY -=1
+            this.enemy1y-=this.game.tileSize
         }
     }
 
     if(this.e1randomDir===2){ //Dirección hacia derecha
-        console.log(this.game.mapTracker.enemy1LocationX)
-
         if(this.game.mapTracker.caveMatrix[this.game.mapTracker.enemy1LocationY][this.game.mapTracker.enemy1LocationX+1] ===  4){
             this.game.mapTracker.caveMatrix[this.game.mapTracker.enemy1LocationY][this.game.mapTracker.enemy1LocationX] = 4
             this.enemy1x+=this.game.tileSize
             this.game.mapTracker.enemy1LocationX +=1
-        } 
+        }else if(this.game.mapTracker.caveMatrix[this.game.mapTracker.enemy1LocationY][this.game.mapTracker.enemy1LocationX+1] === 2){
+            this.game.mapTracker.caveMatrix[this.game.mapTracker.enemy1LocationY][this.game.mapTracker.enemy1LocationX+1] = 3
+        }else if(this.game.mapTracker.caveMatrix[this.game.mapTracker.enemy1LocationY][this.game.mapTracker.enemy1LocationX+1] === 3){
+            this.game.mapTracker.caveMatrix[this.game.mapTracker.enemy1LocationY][this.game.mapTracker.enemy1LocationX] = 4
+            this.game.mapTracker.enemy1LocationX +=1
+            this.enemy1x+=this.game.tileSize
+        }
     }
 
     if(this.e1randomDir===3){ //Dirección hacia abajo
@@ -38,16 +48,27 @@ Enemy.prototype.moveEnemy = function(){
             this.game.mapTracker.caveMatrix[this.game.mapTracker.enemy1LocationY][this.game.mapTracker.enemy1LocationX] = 4
             this.enemy1y+=this.game.tileSize
             this.game.mapTracker.enemy1LocationY +=1
-        } 
+        }else if(this.game.mapTracker.caveMatrix[this.game.mapTracker.enemy1LocationY+1][this.game.mapTracker.enemy1LocationX] === 2){
+            this.game.mapTracker.caveMatrix[this.game.mapTracker.enemy1LocationY+1][this.game.mapTracker.enemy1LocationX] = 3
+        }else if(this.game.mapTracker.caveMatrix[this.game.mapTracker.enemy1LocationY+1][this.game.mapTracker.enemy1LocationX] === 3){
+            this.game.mapTracker.caveMatrix[this.game.mapTracker.enemy1LocationY][this.game.mapTracker.enemy1LocationX] = 4
+            this.game.mapTracker.enemy1LocationY +=1
+            this.enemy1y+=this.game.tileSize
+        }
     }
 
     if(this.e1randomDir===4){ //Dirección hacia izquierda
-        console.log(this.game.mapTracker.enemy1LocationX)
 
         if(this.game.mapTracker.caveMatrix[this.game.mapTracker.enemy1LocationY][this.game.mapTracker.enemy1LocationX-1] ===  4){
             this.game.mapTracker.caveMatrix[this.game.mapTracker.enemy1LocationY][this.game.mapTracker.enemy1LocationX] = 4
             this.enemy1x-=this.game.tileSize
             this.game.mapTracker.enemy1LocationX -=1
-        } 
+        }else if(this.game.mapTracker.caveMatrix[this.game.mapTracker.enemy1LocationY][this.game.mapTracker.enemy1LocationX-1] === 2){
+            this.game.mapTracker.caveMatrix[this.game.mapTracker.enemy1LocationY][this.game.mapTracker.enemy1LocationX-1] = 3
+        }else if(this.game.mapTracker.caveMatrix[this.game.mapTracker.enemy1LocationY][this.game.mapTracker.enemy1LocationX-1] === 3){
+            this.game.mapTracker.caveMatrix[this.game.mapTracker.enemy1LocationY][this.game.mapTracker.enemy1LocationX] = 4
+            this.game.mapTracker.enemy1LocationX -=1
+            this.enemy1x-=this.game.tileSize
+        }
     }
 }

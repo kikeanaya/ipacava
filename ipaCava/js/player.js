@@ -154,7 +154,6 @@ Player.prototype.setListeners = function() {
       } else if(this.haveItem2 === 1){                      // Checks if you already have the item
       } else{
                                                             // Tells the user that they don't have enough money
-
       }
     }
   }.bind(this)
