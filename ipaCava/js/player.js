@@ -25,7 +25,7 @@ Player.prototype.setListeners = function() {
       this.direction = 2
       
       if(this.game.mapTracker.checkEnemyRight() === true){
-        this.game.player.health -= 10  
+        this.game.player.health -= 30  
       } else{
       this.refToDig = this.game.mapTracker.checkTileStatus(this.direction)
 
@@ -49,7 +49,7 @@ Player.prototype.setListeners = function() {
         this.direction = 4
 
         if(this.game.mapTracker.checkEnemyLeft() === true){
-          this.game.player.health -= 10  
+          this.game.player.health -= 30  
         } else{
         this.refToDig = this.game.mapTracker.checkTileStatus(this.direction)
 
@@ -73,7 +73,7 @@ Player.prototype.setListeners = function() {
         this.direction = 1
 
         if(this.game.mapTracker.checkEnemyUp() === true){
-          this.game.player.health -= 10  
+          this.game.player.health -= 30  
         }
         else{
           this.refToDig = this.game.mapTracker.checkTileStatus(this.direction)
@@ -103,7 +103,7 @@ Player.prototype.setListeners = function() {
       this.direction = 3
 
       if(this.game.mapTracker.checkEnemyDown() === true){
-        this.game.player.health -= 10  
+        this.game.player.health -= 30  
       } 
       else{
         this.refToDig = this.game.mapTracker.checkTileStatus(this.direction)
@@ -155,6 +155,10 @@ Player.prototype.setListeners = function() {
       } else{
                                                             // Tells the user that they don't have enough money
       }
+    }else if (event.keyCode === this.game.keys.RETRY) {
+      this.game.start()
     }
+    else if(event.keyCode === this.game.keys.HOME){
+  }
   }.bind(this)
 }

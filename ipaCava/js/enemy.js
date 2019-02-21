@@ -26,7 +26,7 @@ Enemy.prototype.moveEnemy = function(){
             this.game.mapTracker.enemy1LocationY -=1
             this.enemy1y-=this.game.tileSize
         } else if(this.game.mapTracker.caveMatrix[this.game.mapTracker.enemy1LocationY - 1][this.game.mapTracker.enemy1LocationX] === 1){
-            this.game.player.health-=10
+            this.game.player.health-=30
         }
     }
 
@@ -42,7 +42,7 @@ Enemy.prototype.moveEnemy = function(){
             this.game.mapTracker.enemy1LocationX +=1
             this.enemy1x+=this.game.tileSize
         }else if(this.game.mapTracker.caveMatrix[this.game.mapTracker.enemy1LocationY][this.game.mapTracker.enemy1LocationX+1] === 1){
-            this.game.player.health-=10
+            this.game.player.health-=30
         }
     }
 
@@ -59,7 +59,7 @@ Enemy.prototype.moveEnemy = function(){
             this.game.mapTracker.enemy1LocationY +=1
             this.enemy1y+=this.game.tileSize
         }else if(this.game.mapTracker.caveMatrix[this.game.mapTracker.enemy1LocationY+1][this.game.mapTracker.enemy1LocationX] === 1){
-            this.game.player.health-=10
+            this.game.player.health-=30
         }
     }
 
@@ -76,7 +76,7 @@ Enemy.prototype.moveEnemy = function(){
             this.game.mapTracker.enemy1LocationX -=1
             this.enemy1x-=this.game.tileSize
         } else if(this.game.mapTracker.caveMatrix[this.game.mapTracker.enemy1LocationY][this.game.mapTracker.enemy1LocationX-1] === 1){
-            this.game.player.health-=10
+            this.game.player.health-=30
         }
     }
 }

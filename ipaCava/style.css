@@ -1,3 +1,9 @@
 body {
   text-align: center;
 }
+
+#start-button{
+  background: greenyellow;
+  width: 300px;
+  height: 200px;
+}

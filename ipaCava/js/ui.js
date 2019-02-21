@@ -63,3 +63,28 @@ Ui.prototype.drawItem1 = function(){
 Ui.prototype.drawItem2 = function(){
     this.game.ctx.drawImage(this.item2, 500, 27, 30, 30)
 }
+
+Ui.prototype.endScreen = function(){
+    this.game.ctx.fillStyle = "red"
+    this.game.ctx.fillRect(400, 110, 650, 440)
+
+    this.game.ctx.font = "55px Love Ya Like A Sister";
+    this.game.ctx.fillStyle = "white";
+    this.game.ctx.fillText("YOU FAILED. TRY AGAIN?", 450, 230);
+
+    this.game.ctx.font = "35px Love Ya Like A Sister";
+    this.game.ctx.fillStyle = "white";
+    this.game.ctx.fillText("PRESS 'Y'", 500, 400);
+
+    this.game.ctx.font = "35px Love Ya Like A Sister";
+    this.game.ctx.fillStyle = "white";
+    this.game.ctx.fillText("TO RESTART", 480, 450);
+
+    this.game.ctx.font = "35px Love Ya Like A Sister";
+    this.game.ctx.fillStyle = "white";
+    this.game.ctx.fillText("PRESS 'N'", 800, 400);
+
+    this.game.ctx.font = "35px Love Ya Like A Sister";
+    this.game.ctx.fillStyle = "white";
+    this.game.ctx.fillText("FOR HOME SCREEN", 730, 450);
+}

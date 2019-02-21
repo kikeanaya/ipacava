@@ -9,7 +9,9 @@ var Game = {
     LEFT : 37,
     SHOP : 83,
     ITEM1 : 49,
-    ITEM2 : 50
+    ITEM2 : 50,
+    RETRY : 89,
+    HOME : 78
   },
   init: function(id){
     this.canvas = document.getElementById(id)
@@ -50,11 +52,13 @@ var Game = {
 
       this.mapTracker.setPlayerLocation()
       this.mapTracker.setEnemyLocation()
+      
 
       this.drawAll()
 
-      if(this.player.health == 0){
-        this.stopGame()
+      if(this.player.health <= 0){
+        this.stop()
+        this.ui.endScreen()
       }
 
     }.bind(this), 1000 / this.fps)
@@ -70,9 +74,13 @@ var Game = {
     this.depth = 0
     this.money = 0
     this.menuActivated = 0 // 0: not activated, 1: activated
+    this.endActivated = 0
   },
   clear: function () {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
+  },
+  stop: function () {
+    clearInterval(this.interval);
   }, 
   drawAll: function(){
     this.background.draw()
@@ -93,7 +101,4 @@ var Game = {
       this.ui.drawItem2()
     }
   },
-  stopGame: function(){
-    alert("YOU DIED")
-  }
 }
