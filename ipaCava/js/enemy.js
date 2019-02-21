@@ -7,10 +7,7 @@ function Enemy(game) {
     this.enemy1x = this.game.tileSize * 11
     this.enemy1y = this.game.tileSize * 10
     this.e1randomDir = 0
-    this.enemy1Health = 50
-
-    this.enemy2x = this.game.tileSize * 9
-    this.enemy2y = this.game.tileSize * 10
+    this.enemy1Health = 100
 }
 
 Enemy.prototype.moveEnemy = function(){

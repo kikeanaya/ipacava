@@ -20,10 +20,10 @@ function Cave(game) {
   this.emptyTile.src = "img/emptyTile.png"
   
   this.enemy = new Image()
-  this.enemy.src = "img/enemy1.png"
+  this.enemy.src = "img/cat.png"
 
   this.ipa = new Image()
-  this.ipa.src = "img/gorilla.png"
+  this.ipa.src = "img/ipa.png"
 
   this.numberOfHTiles = 15
   this.numberOfVTiles = 30  

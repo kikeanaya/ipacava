@@ -45,10 +45,13 @@ var Game = {
         this.framesCounter = 0
       }
 
-      if (this.framesCounter % 50 === 0){
+      if (this.framesCounter % 60 === 0){
         this.enemy.e1randomDir = Math.floor(Math.random() * 4) + 1  
         this.enemy.moveEnemy()
+        this.incrementSeconds()
+
       }
+
       this.mapTracker.setPlayerLocation()
       this.mapTracker.setEnemyLocation()
       
@@ -78,6 +81,7 @@ var Game = {
     this.money = 0
     this.menuActivated = 0 // 0: not activated, 1: activated
     this.endActivated = 0
+    this.seconds = 0
   },
   clear: function () {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
@@ -94,7 +98,7 @@ var Game = {
     this.ui.drawDepth()
     this.ui.drawMoney()
     this.ui.drawEnemyHealth()
-
+    this.ui.drawSeconds()
 
     if (this.menuActivated === 1){
       this.ui.drawShop()
@@ -107,5 +111,8 @@ var Game = {
     if (this.player.haveItem2 === 1){
       this.ui.drawItem2()
     }
+    },
+    incrementSeconds: function(){
+      this.seconds +=1
     }
 }
