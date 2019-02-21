@@ -37,8 +37,15 @@ var Game = {
   
       this.framesCounter++
   
-      if (this.framesCounter > 1000) {
+      if (this.framesCounter > 999) {
         this.framesCounter = 0
+      }
+
+      if (this.framesCounter % 100 === 0){
+        this.enemy.e1randomDir = Math.floor(Math.random() * 4) + 1  
+        console.log(this.enemy.e1randomDir)
+        this.enemy.moveEnemy()
+        console.log(this.mapTracker.caveMatrix)
       }
 
       this.mapTracker.setPlayerLocation()
