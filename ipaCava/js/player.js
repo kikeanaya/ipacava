@@ -164,8 +164,11 @@ Player.prototype.setListeners = function() {
     }
     else if (event.keyCode == this.game.keys.SHOOTRIGHT && this.haveItem1 === 1) {
       this.shootRight();
+      this.game.boneSound.play()
     }else if (event.keyCode == this.game.keys.SHOOTLEFT && this.haveItem1 === 1) {
       this.shootLeft();
+      this.game.boneSound.play()
+
     }
   }.bind(this)
 }

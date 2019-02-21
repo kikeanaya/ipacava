@@ -1,9 +1,21 @@
 body {
   text-align: center;
+  background-image: url("img/startBackground.jpg");
+  background-size: cover;
+  height: 100%;
 }
 
 #start-button{
-  background: greenyellow;
-  width: 300px;
-  height: 200px;
+  position: fixed;
+  top: 420px;
+  left: 620px;
+  background: #530200;
+  color: #fcdeae;
+  width: 200px;
+  height: 100px;
+  border-radius: 5px;
+  border-width: 3px;
+  border-color: #fcdeae;
+  font-family: "Love Ya Like A Sister";
+  font-size: 30px;
 }

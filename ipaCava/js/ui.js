@@ -22,7 +22,7 @@ Ui.prototype.drawDepth = function (){
 
 Ui.prototype.drawPlayerHealth = function (){
     this.game.ctx.fillStyle = "grey"
-    this.game.ctx.fillRect(20, 27, 330, 29)
+    this.game.ctx.fillRect(20, 27, 310, 29)
 
     this.game.ctx.font = "25px Love Ya Like A Sister";
     this.game.ctx.fillStyle = "white";
