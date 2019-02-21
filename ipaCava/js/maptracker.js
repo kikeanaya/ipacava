@@ -49,16 +49,18 @@ MapTracker.prototype.updateToFour = function() {
     this.caveMatrix[this.playerLocationY][this.playerLocationX] = 4
 }
 
+// SETS PLAYER LOCATION IN MATRIX
 MapTracker.prototype.setPlayerLocation = function() {
     this.caveMatrix[this.playerLocationY][this.playerLocationX] = 1
 }
 
+// SETS ENEMY LOCATION IN MATRIX
 MapTracker.prototype.setEnemyLocation = function() {
     this.caveMatrix[this.enemy1LocationY][this.enemy1LocationX] = 5
 }
 
 MapTracker.prototype.checkEnemyUp = function() {
-    if(this.caveMatrix[this.playerLocationY-1][this.playerLocationX] === 5 ){ //WILL CLASH IF PLAYER MOVES RIGHT
+    if(this.caveMatrix[this.playerLocationY-1][this.playerLocationX] === 5 ){ 
         this.enemyClash = true
     } else{
         (this.enemyClash = false)
@@ -67,7 +69,7 @@ MapTracker.prototype.checkEnemyUp = function() {
 }
 
 MapTracker.prototype.checkEnemyRight = function() {
-    if(this.caveMatrix[this.playerLocationY][this.playerLocationX+1] === 5 ){ //WILL CLASH IF PLAYER MOVES RIGHT
+    if(this.caveMatrix[this.playerLocationY][this.playerLocationX+1] === 5 ){
         this.enemyClash = true
     } else{
         (this.enemyClash = false)
@@ -76,7 +78,7 @@ MapTracker.prototype.checkEnemyRight = function() {
 }
 
 MapTracker.prototype.checkEnemyDown = function() {
-    if(this.caveMatrix[this.playerLocationY+1][this.playerLocationX] === 5 ){ //WILL CLASH IF PLAYER MOVES RIGHT
+    if(this.caveMatrix[this.playerLocationY+1][this.playerLocationX] === 5 ){
         this.enemyClash = true
     } else{
         (this.enemyClash = false)
@@ -85,7 +87,7 @@ MapTracker.prototype.checkEnemyDown = function() {
 }
 
 MapTracker.prototype.checkEnemyLeft = function() {
-    if(this.caveMatrix[this.playerLocationY][this.playerLocationX-1] === 5 ){ //WILL CLASH IF PLAYER MOVES RIGHT
+    if(this.caveMatrix[this.playerLocationY][this.playerLocationX-1] === 5 ){
         this.enemyClash = true
     } else{
         (this.enemyClash = false)
@@ -93,8 +95,9 @@ MapTracker.prototype.checkEnemyLeft = function() {
     return this.enemyClash
 }
 
+// CHECKS STATUS OF TILE WHERE PLAYER IS TRYING TO MOVE
 MapTracker.prototype.checkTileStatus = function(direction) {
-    
+
     if(direction===3){ //Dirección hacia abajo
         if(this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] === 2){
             this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] = 3

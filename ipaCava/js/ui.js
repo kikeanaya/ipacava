@@ -1,14 +1,14 @@
 function Ui(game){
     this.game = game
 
-    this.weapon1 = new Image()
-    this.weapon1.src = "img/weapon1.png"
+    this.item1 = new Image()
+    this.item1.src = "img/item1.png"
 
-    this.weapon2 = new Image()
-    this.weapon2.src = "img/weapon2.png"
+    this.item2 = new Image()
+    this.item2.src = "img/item2.png"
 
-    this.weaponsWidth = 200
-    this.weaponsHeight = 200
+    this.itemsWidth = 200
+    this.itemsHeight = 200
 }
 
 Ui.prototype.drawDepth = function (){
@@ -43,13 +43,13 @@ Ui.prototype.drawShop = function (){
     this.game.ctx.fillStyle = "white";
     this.game.ctx.fillText("PRESS 1 TO BUY:", 540, 270);
     
-    this.game.ctx.drawImage(this.weapon1, 532, 285, this.weaponsWidth, this.weaponsHeight)
+    this.game.ctx.drawImage(this.item1, 532, 285, this.itemsWidth, this.itemsHeight)
 
     this.game.ctx.font = "30px Love Ya Like A Sister";
     this.game.ctx.fillStyle = "white";
     this.game.ctx.fillText("PRESS 2 TO BUY:", 770, 270);
 
-    this.game.ctx.drawImage(this.weapon2, 764, 285, this.weaponsWidth, this.weaponsHeight)
+    this.game.ctx.drawImage(this.item2, 764, 285, this.itemsWidth, this.itemsHeight)
 
     this.game.ctx.font = "25px Love Ya Like A Sister";
     this.game.ctx.fillStyle = "white";
@@ -57,9 +57,9 @@ Ui.prototype.drawShop = function (){
 }
 
 Ui.prototype.drawItem1 = function(){
-    this.game.ctx.drawImage(this.weapon1, 400, 27, 30, 30)
+    this.game.ctx.drawImage(this.item1, 400, 27, 30, 30)
 }
 
 Ui.prototype.drawItem2 = function(){
-    this.game.ctx.drawImage(this.weapon2, 500, 27, 30, 30)
+    this.game.ctx.drawImage(this.item2, 500, 27, 30, 30)
 }

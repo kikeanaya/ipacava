@@ -8,7 +8,7 @@ function Player(game) {
 
   this.refToDig = 0
 
-  this.direction = 0 // up = 1, right = 2, down = 3, left = 4
+  this.direction = 0                                     
   this.x = this.game.tileSize * 5
   this.y = this.game.tileSize * 5
 
@@ -28,7 +28,7 @@ Player.prototype.setListeners = function() {
         this.game.player.health -= 10  
       } else{
       this.refToDig = this.game.mapTracker.checkTileStatus(this.direction)
-      
+
         if (this.refToDig === 3){
           this.game.cave.drawBrokenTile(this.direction)
         } else if (this.refToDig === 4){
@@ -140,26 +140,21 @@ Player.prototype.setListeners = function() {
     } 
     else if (event.keyCode === this.game.keys.ITEM1 && this.game.menuActivated === 1) {
       if(this.game.money >= 300 && this.haveItem1 === 0){
-        this.haveItem1 = 1
-        console.log("compra el item 1")
-        this.game.money -= 300
-      } else if(this.haveItem1 === 1){
-        console.log("you already have that item")
+        this.haveItem1 = 1                                  // Buys Item 1
+        this.game.money -= 300                              // Substracts money from player
+      } else if(this.haveItem1 === 1){                      // Checks if you already have the item
       } else{
-        console.log("not enough money")
+                                                            // Tells the user that they don't have enough money
       }
     } 
     else if(event.keyCode === this.game.keys.ITEM2 && this.game.menuActivated === 1){
       if(this.game.money >= 500 && this.haveItem2 === 0){
-        this.haveItem2 = 1
-        console.log("compra el item 2")
-        this.game.money -= 500
-      } else if(this.haveItem2 === 1){
-        console.log("you already have that item")
+        this.haveItem2 = 1                                  // Buys Item 2
+        this.game.money -= 500                              // Substracts money from player
+      } else if(this.haveItem2 === 1){                      // Checks if you already have the item
       } else{
-        console.log("have" + this.haveItem2)
-        console.log("money" + this.game.money)
-        console.log("not enough money")
+                                                            // Tells the user that they don't have enough money
+
       }
     }
   }.bind(this)
