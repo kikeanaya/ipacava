@@ -15,6 +15,8 @@ function Player(game) {
   this.haveItem1 = 0
   this.haveItem2 = 0
 
+  this.bones = [];
+
   this.setListeners();
 }
 
@@ -159,6 +161,26 @@ Player.prototype.setListeners = function() {
       this.game.start()
     }
     else if(event.keyCode === this.game.keys.HOME){
-  }
+    }
+    else if (event.keyCode == this.game.keys.SHOOT && this.haveItem1 === 1) {
+      this.shoot();
+    }
   }.bind(this)
+}
+
+Player.prototype.shoot = function() {
+  var bone = new Bone(this.game, this.x + this.width, this.y + this.height / 2)
+
+  this.bones.push(bone)
+}
+
+Player.prototype.drawBones = function(){
+  this.bones = this.bones.filter(function (bone) {
+    return bone.x <= 1280;
+  });
+  this.bones.forEach(function(bone) {
+    bone.draw();
+    bone.move();
+  });
+
 }

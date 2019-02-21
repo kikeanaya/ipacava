@@ -11,7 +11,8 @@ var Game = {
     ITEM1 : 49,
     ITEM2 : 50,
     RETRY : 89,
-    HOME : 78
+    HOME : 78,
+    SHOOT: 88
   },
   init: function(id){
     this.canvas = document.getElementById(id)
@@ -26,7 +27,7 @@ var Game = {
 
     this.tileSize = Math.floor(this.canvas.width / 15)
 
-    this.moneySound = new Audio("snd/money.wav");
+    this.moneySound = new Audio("snd/money.wav")
 
     this.start()
   }, 
@@ -85,6 +86,8 @@ var Game = {
   drawAll: function(){
     this.background.draw()
     this.cave.draw()
+    this.player.drawBones()
+    
     this.ui.drawPlayerHealth()
     this.ui.drawDepth()
     this.ui.drawMoney()
