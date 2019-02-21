@@ -12,9 +12,9 @@ function MapTracker(game){
     this.caveMatrix = [
         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],  // Leyenda:
         [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],  // 0 = espacio vacío
-        [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],  // 1 = ubicación del jugador
-        [2,6,2,2,2,2,2,2,2,2,2,6,2,2,2],  // 2 = tile sin tocar
-        [2,2,2,2,2,2,2,2,6,2,2,2,2,2,2],  // 3 = tile con 1 golpe
+        [2,2,2,2,6,2,2,2,2,2,2,2,2,2,2],  // 1 = ubicación del jugador
+        [2,6,2,2,6,2,2,2,2,2,2,6,2,2,2],  // 2 = tile sin tocar
+        [2,2,2,2,6,2,2,2,6,2,2,2,2,2,2],  // 3 = tile con 1 golpe
         [2,2,2,2,2,6,2,2,2,2,2,2,2,2,2],  // 4 = espacio sin colisión pero con fondo de caverna
         [2,2,2,2,2,2,2,2,2,4,4,4,4,2,2],  // 5 = enemigo
         [2,2,6,2,2,2,2,2,2,2,2,2,2,6,2],  // 6 = joya sin golpe

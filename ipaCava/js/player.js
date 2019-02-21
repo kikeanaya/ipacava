@@ -187,10 +187,19 @@ Player.prototype.drawBones = function(){
     if(bone.x <= 1280 && bone.x>0){
       return true
     }  
-  });
+  })
   this.bones.forEach(function(bone) {
     bone.draw()
     bone.move()
-  });
+  })
+}
 
+Player.prototype.checkBoneHit = function(){
+  this.bones.forEach(function(bone){                // Checks bones collision with enemy
+    if(bone.x>this.game.enemy.enemy1x && bone.x<this.game.enemy.enemy1x+10){
+      if(bone.y>this.game.enemy.enemy1y&&bone.y<this.game.enemy.enemy1y+this.game.tileSize){
+      this.game.enemy.enemy1Health-=10
+      }
+    }
+  }.bind(this))
 }

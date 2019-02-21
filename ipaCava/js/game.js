@@ -47,15 +47,12 @@ var Game = {
 
       if (this.framesCounter % 50 === 0){
         this.enemy.e1randomDir = Math.floor(Math.random() * 4) + 1  
-        console.log(this.enemy.e1randomDir)
         this.enemy.moveEnemy()
-        console.log(this.mapTracker.caveMatrix)
       }
-
       this.mapTracker.setPlayerLocation()
       this.mapTracker.setEnemyLocation()
       
-
+      this.player.checkBoneHit()
       this.drawAll()
 
       if(this.player.health <= 0){
@@ -92,6 +89,8 @@ var Game = {
     this.ui.drawPlayerHealth()
     this.ui.drawDepth()
     this.ui.drawMoney()
+    this.ui.drawEnemyHealth()
+
 
     if (this.menuActivated === 1){
       this.ui.drawShop()
