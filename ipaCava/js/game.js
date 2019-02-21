@@ -7,7 +7,9 @@ var Game = {
     RIGHT : 39,
     UP : 38,
     LEFT : 37,
-    SHOP : 83
+    SHOP : 83,
+    ITEM1 : 49,
+    ITEM2 : 50
   },
   init: function(id){
     this.canvas = document.getElementById(id)
@@ -48,9 +50,6 @@ var Game = {
       if(this.player.health == 0){
         this.stopGame()
       }
-
-      console.log(this.mapTracker.caveMatrix)
-
 
     }.bind(this), 1000 / this.fps)
   },

@@ -18,7 +18,6 @@ Ui.prototype.drawDepth = function (){
     this.game.ctx.font = "25px Love Ya Like A Sister";
     this.game.ctx.fillStyle = "white";
     this.game.ctx.fillText("DEPTH: " +this.game.depth + "m", 1262, 50);
-
 }
 
 Ui.prototype.drawPlayerHealth = function (){

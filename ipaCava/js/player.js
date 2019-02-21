@@ -127,6 +127,10 @@ Player.prototype.setListeners = function() {
       } else{
       this.game.menuActivated = 1
       }
-    }
+    } else if (event.keyCode === this.game.keys.ITEM1 && this.game.menuActivated === 1) {
+      console.log("compra el item 1")
+    } else if(event.keyCode === this.game.keys.ITEM2 && this.game.menuActivated === 1){
+      console.log("compra el item 2")
+  }
   }.bind(this)
 }
