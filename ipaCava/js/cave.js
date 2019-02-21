@@ -50,7 +50,7 @@ Cave.prototype.draw = function() {
                 this.refX+=this.game.tileSize
             } else if(this.game.mapTracker.caveMatrix[i][j] === 5){
                 this.game.ctx.drawImage(this.emptyTile, this.refX, this.refY, this.game.tileSize, this.game.tileSize)
-                this.game.ctx.drawImage(this.enemy, this.game.enemy.x, this.game.enemy.y, this.game.tileSize, this.game.tileSize)
+                this.game.ctx.drawImage(this.enemy, this.game.enemy.enemy1x, this.game.enemy.enemy1y, this.game.tileSize, this.game.tileSize)
                 this.refX+=this.game.tileSize
             } else if(this.game.mapTracker.caveMatrix[i][j] === 6){
                 this.game.ctx.drawImage(this.jewelTile, this.refX, this.refY, this.game.tileSize, this.game.tileSize)

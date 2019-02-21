@@ -26,7 +26,6 @@ var Game = {
 
     this.moneySound = new Audio("snd/money.wav");
 
-
     this.start()
   }, 
   start: function () {
@@ -77,6 +76,10 @@ var Game = {
 
     if (this.menuActivated === 1){
       this.ui.drawShop()
+    }
+
+    if (this.player.haveItem1 === 1){
+      this.ui.drawItem1()
     }
   },
   detectGroundCollision: function(){

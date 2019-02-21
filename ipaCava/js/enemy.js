@@ -4,6 +4,9 @@ function Enemy(game) {
     this.width = this.game.tileSize
     this.height = this.game.tileSize
 
-    this.x = this.game.tileSize * 10
-    this.y = this.game.tileSize * 5
+    this.enemy1x = this.game.tileSize * 11
+    this.enemy1y = this.game.tileSize * 10
+
+    this.enemy2x = this.game.tileSize * 9
+    this.enemy2y = this.game.tileSize * 10
 }

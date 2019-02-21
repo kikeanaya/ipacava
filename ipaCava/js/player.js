@@ -12,6 +12,9 @@ function Player(game) {
   this.x = this.game.tileSize * 5
   this.y = this.game.tileSize * 5
 
+  this.haveItem1 = 0
+  this.haveitem2 = 0
+
   this.setListeners();
 }
 
@@ -77,7 +80,7 @@ Player.prototype.setListeners = function() {
   
             this.game.background.y += this.game.tileSize
             this.game.cave.y += this.game.tileSize
-            this.game.enemy.y += this.game.tileSize
+            this.game.enemy.enemy1y += this.game.tileSize
             this.game.depth -= 2
             this.game.mapTracker.updateToFour()
             this.game.mapTracker.playerLocationY -=1
@@ -86,7 +89,7 @@ Player.prototype.setListeners = function() {
           }else {
             this.game.background.y += this.game.tileSize
             this.game.cave.y += this.game.tileSize
-            this.game.enemy.y += this.game.tileSize
+            this.game.enemy.enemy1y += this.game.tileSize
             this.game.depth -= 2
             this.game.mapTracker.updateToFour()
             this.game.mapTracker.playerLocationY -=1
@@ -106,7 +109,7 @@ Player.prototype.setListeners = function() {
           this.game.background.y -= this.game.tileSize
           this.game.cave.y -= this.game.tileSize
           this.game.depth += 2
-          this.game.enemy.y -= this.game.tileSize
+          this.game.enemy.enemy1y -= this.game.tileSize
           this.game.mapTracker.updateToFour()
           this.game.mapTracker.playerLocationY +=1
         } else if(this.refToDig === 7){
@@ -116,7 +119,7 @@ Player.prototype.setListeners = function() {
           this.game.background.y -= this.game.tileSize
           this.game.cave.y -= this.game.tileSize
           this.game.depth += 2
-          this.game.enemy.y -= this.game.tileSize
+          this.game.enemy.enemy1y -= this.game.tileSize
           this.game.mapTracker.updateToFour()
           this.game.mapTracker.playerLocationY +=1
         }
@@ -128,7 +131,14 @@ Player.prototype.setListeners = function() {
       this.game.menuActivated = 1
       }
     } else if (event.keyCode === this.game.keys.ITEM1 && this.game.menuActivated === 1) {
-      console.log("compra el item 1")
+        if(this.game.money >= 300){
+          this.haveItem1 = 1
+          console.log("compra el item 1")
+          console.log(this.haveItem1)
+          this.game.money -= 300
+        } else{
+          console.log("not enough money")
+        }
     } else if(event.keyCode === this.game.keys.ITEM2 && this.game.menuActivated === 1){
       console.log("compra el item 2")
   }

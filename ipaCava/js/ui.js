@@ -55,3 +55,7 @@ Ui.prototype.drawShop = function (){
     this.game.ctx.fillStyle = "white";
     this.game.ctx.fillText("PRESS 'S' TO EXIT SHOP", 640, 530);
 }
+
+Ui.prototype.drawItem1 = function(){
+    this.game.ctx.drawImage(this.weapon1, 400, 27, 30, 30)
+}
