@@ -61,7 +61,6 @@ Cave.prototype.draw = function() {
             }
         }
         this.refY+=this.game.tileSize
-        this.game.ctx.drawImage(this.tile, this.x, this.y+this.game.tileSize, this.game.tileSize, this.game.tileSize)
     }
 }
 

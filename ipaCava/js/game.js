@@ -49,6 +49,8 @@ var Game = {
         this.stopGame()
       }
 
+      console.log(this.mapTracker.caveMatrix)
+
 
     }.bind(this), 1000 / this.fps)
   },
