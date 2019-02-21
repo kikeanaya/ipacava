@@ -131,11 +131,13 @@ Player.prototype.setListeners = function() {
       this.game.menuActivated = 1
       }
     } else if (event.keyCode === this.game.keys.ITEM1 && this.game.menuActivated === 1) {
-        if(this.game.money >= 300){
+        if(this.game.money >= 300 && this.haveItem1 === 0){
           this.haveItem1 = 1
           console.log("compra el item 1")
           console.log(this.haveItem1)
           this.game.money -= 300
+        } else if(this.haveItem1 === 1){
+          console.log("you already have that item")
         } else{
           console.log("not enough money")
         }
