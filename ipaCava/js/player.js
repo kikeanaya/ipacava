@@ -162,25 +162,35 @@ Player.prototype.setListeners = function() {
     }
     else if(event.keyCode === this.game.keys.HOME){
     }
-    else if (event.keyCode == this.game.keys.SHOOT && this.haveItem1 === 1) {
-      this.shoot();
+    else if (event.keyCode == this.game.keys.SHOOTRIGHT && this.haveItem1 === 1) {
+      this.shootRight();
+    }else if (event.keyCode == this.game.keys.SHOOTLEFT && this.haveItem1 === 1) {
+      this.shootLeft();
     }
   }.bind(this)
 }
 
-Player.prototype.shoot = function() {
-  var bone = new Bone(this.game, this.x + this.width, this.y + this.height / 2)
+Player.prototype.shootRight = function() {
+  var bone = new Bone(this.game, this.x + this.width, this.y + this.height / 2, 1)
+
+  this.bones.push(bone)
+}
+
+Player.prototype.shootLeft = function() {
+  var bone = new Bone(this.game, this.x, this.y + this.height / 2, 0)
 
   this.bones.push(bone)
 }
 
 Player.prototype.drawBones = function(){
-  this.bones = this.bones.filter(function (bone) {
-    return bone.x <= 1280;
+  this.bones = this.bones.filter(function (bone) {  // Deletes bones out of canvas
+    if(bone.x <= 1280 && bone.x>0){
+      return true
+    }  
   });
   this.bones.forEach(function(bone) {
-    bone.draw();
-    bone.move();
+    bone.draw()
+    bone.move()
   });
 
 }

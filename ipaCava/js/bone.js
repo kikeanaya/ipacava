@@ -1,9 +1,10 @@
-function Bone(game, x, y) {
+function Bone(game, x, y, boneDirection) {
     this.game = game
 
     this.x = x
     this.y = y
     this.r = 5
+    this.boneDirection = boneDirection
 
     this.width = 30
     this.height = 15
@@ -18,5 +19,10 @@ Bone.prototype.draw = function(){
 }
 
 Bone.prototype.move = function() {
-    this.x += 10
+    if(this.boneDirection === 1){
+        this.x += 10
+    }
+    if(this.boneDirection === 0){
+        this.x -= 10
+    }
 }

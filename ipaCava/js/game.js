@@ -12,7 +12,8 @@ var Game = {
     ITEM2 : 50,
     RETRY : 89,
     HOME : 78,
-    SHOOT: 88
+    SHOOTRIGHT: 88,
+    SHOOTLEFT: 90
   },
   init: function(id){
     this.canvas = document.getElementById(id)
