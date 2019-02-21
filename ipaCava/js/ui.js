@@ -97,3 +97,20 @@ Ui.prototype.endScreen = function(){
     this.game.ctx.fillStyle = "white";
     this.game.ctx.fillText("FOR HOME SCREEN", 730, 450);
 }
+
+Ui.prototype.winScreen = function(){
+    this.game.ctx.fillStyle = "green"
+    this.game.ctx.fillRect(400, 110, 650, 440)
+
+    this.game.ctx.font = "50px Love Ya Like A Sister";
+    this.game.ctx.fillStyle = "white";
+    this.game.ctx.fillText("YOU BEAT THE ANNOYING CAT", 425, 230);
+
+    this.game.ctx.font = "40px Love Ya Like A Sister";
+    this.game.ctx.fillStyle = "white";
+    this.game.ctx.fillText("IN X SECONDS", 610, 290);
+
+    this.game.ctx.font = "35px Love Ya Like A Sister";
+    this.game.ctx.fillStyle = "white";
+    this.game.ctx.fillText("PRESS 'Y' TO RESTART", 570, 400);
+}

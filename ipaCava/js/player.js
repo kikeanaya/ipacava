@@ -186,8 +186,9 @@ Player.prototype.drawBones = function(){
   this.bones = this.bones.filter(function (bone) {  // Deletes bones out of canvas
     if(bone.x <= 1280 && bone.x>0){
       return true
-    }  
-  })
+    } 
+
+  }.bind(this))
   this.bones.forEach(function(bone) {
     bone.draw()
     bone.move()
@@ -198,8 +199,9 @@ Player.prototype.checkBoneHit = function(){
   this.bones.forEach(function(bone){                // Checks bones collision with enemy
     if(bone.x>this.game.enemy.enemy1x && bone.x<this.game.enemy.enemy1x+10){
       if(bone.y>this.game.enemy.enemy1y&&bone.y<this.game.enemy.enemy1y+this.game.tileSize){
-      this.game.enemy.enemy1Health-=10
-      }
-    }
+      this.game.enemy.enemy1Health-=10 
+      bone.r=0
+     }
+    } 
   }.bind(this))
 }

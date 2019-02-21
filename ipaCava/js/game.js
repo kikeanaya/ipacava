@@ -59,6 +59,10 @@ var Game = {
         this.stop()
         this.ui.endScreen()
       }
+      if(this.enemy.enemy1Health <= 0){
+        this.stop()
+        this.ui.winScreen()
+      }
 
     }.bind(this), 1000 / this.fps)
   },
@@ -103,5 +107,5 @@ var Game = {
     if (this.player.haveItem2 === 1){
       this.ui.drawItem2()
     }
-  },
+    }
 }
