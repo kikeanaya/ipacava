@@ -93,13 +93,6 @@ var Game = {
       this.ui.drawItem2()
     }
   },
-  detectGroundCollision: function(){
-    var happens
-      if(this.mapTrackerx  >= this.enemy.x-1 && this.player.x <= this.enemy.x+1 && this.player.y  === this.enemy.y ){
-        happens = true
-      }
-  return happens         
-  },
   stopGame: function(){
     alert("YOU DIED")
   }
