@@ -12,8 +12,6 @@ function Enemy(game) {
     this.enemy2y = this.game.tileSize * 10
 }
 
-
-
 Enemy.prototype.moveEnemy = function(){
 
     if(this.e1randomDir===1){ //Dirección hacia arriba

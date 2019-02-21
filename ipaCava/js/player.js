@@ -22,11 +22,13 @@ Player.prototype.setListeners = function() {
   document.onkeydown = function(event) {
     
     if (event.keyCode === this.game.keys.RIGHT && this.x<this.game.canvas.width - this.width-30) {
-        this.direction = 2
-        if(this.game.mapTracker.checkEnemyRight() === true){
-          this.game.player.health -= 10  
-        } else{
-        this.refToDig = this.game.mapTracker.checkTileStatus(this.direction)
+      this.direction = 2
+      
+      if(this.game.mapTracker.checkEnemyRight() === true){
+        this.game.player.health -= 10  
+      } else{
+      this.refToDig = this.game.mapTracker.checkTileStatus(this.direction)
+      
         if (this.refToDig === 3){
           this.game.cave.drawBrokenTile(this.direction)
         } else if (this.refToDig === 4){
@@ -43,9 +45,9 @@ Player.prototype.setListeners = function() {
           this.game.mapTracker.playerLocationX +=1
         }
       }
-
     } else if (event.keyCode == this.game.keys.LEFT && this.x > 5) {
         this.direction = 4
+
         if(this.game.mapTracker.checkEnemyLeft() === true){
           this.game.player.health -= 10  
         } else{
@@ -69,9 +71,11 @@ Player.prototype.setListeners = function() {
       }
     } else if (event.keyCode == this.game.keys.UP && this.game.background.y < -203) {
         this.direction = 1
+
         if(this.game.mapTracker.checkEnemyUp() === true){
           this.game.player.health -= 10  
-        } else{
+        }
+        else{
           this.refToDig = this.game.mapTracker.checkTileStatus(this.direction)
           if (this.refToDig === 3){
             this.game.cave.drawBrokenTile(this.direction)
@@ -94,12 +98,14 @@ Player.prototype.setListeners = function() {
             this.game.mapTracker.updateToFour()
             this.game.mapTracker.playerLocationY -=1
           } 
-      }
+        }
     } else if (event.keyCode == this.game.keys.DOWN && this.game.background.y > -2900) {
-        this.direction = 3
-        if(this.game.mapTracker.checkEnemyDown() === true){
-          this.game.player.health -= 10  
-        } else{
+      this.direction = 3
+
+      if(this.game.mapTracker.checkEnemyDown() === true){
+        this.game.player.health -= 10  
+      } 
+      else{
         this.refToDig = this.game.mapTracker.checkTileStatus(this.direction)
         if (this.refToDig === 3){
           this.game.cave.drawBrokenTile(this.direction)
@@ -124,34 +130,37 @@ Player.prototype.setListeners = function() {
           this.game.mapTracker.playerLocationY +=1
         }
       }
-    } else if(event.keyCode == this.game.keys.SHOP){
+    } 
+    else if(event.keyCode == this.game.keys.SHOP){
       if(this.game.menuActivated === 1){
         this.game.menuActivated = 0
       } else{
       this.game.menuActivated = 1
       }
-    } else if (event.keyCode === this.game.keys.ITEM1 && this.game.menuActivated === 1) {
-        if(this.game.money >= 300 && this.haveItem1 === 0){
-          this.haveItem1 = 1
-          console.log("compra el item 1")
-          this.game.money -= 300
-        } else if(this.haveItem1 === 1){
-          console.log("you already have that item")
-        } else{
-          console.log("not enough money")
-        }
-    } else if(event.keyCode === this.game.keys.ITEM2 && this.game.menuActivated === 1){
-        if(this.game.money >= 500 && this.haveItem2 === 0){
-          this.haveItem2 = 1
-          console.log("compra el item 2")
-          this.game.money -= 500
-        } else if(this.haveItem2 === 1){
-          console.log("you already have that item")
-        } else{
-          console.log("have" + this.haveItem2)
-          console.log("money" + this.game.money)
-          console.log("not enough money")
-        }
-  }
+    } 
+    else if (event.keyCode === this.game.keys.ITEM1 && this.game.menuActivated === 1) {
+      if(this.game.money >= 300 && this.haveItem1 === 0){
+        this.haveItem1 = 1
+        console.log("compra el item 1")
+        this.game.money -= 300
+      } else if(this.haveItem1 === 1){
+        console.log("you already have that item")
+      } else{
+        console.log("not enough money")
+      }
+    } 
+    else if(event.keyCode === this.game.keys.ITEM2 && this.game.menuActivated === 1){
+      if(this.game.money >= 500 && this.haveItem2 === 0){
+        this.haveItem2 = 1
+        console.log("compra el item 2")
+        this.game.money -= 500
+      } else if(this.haveItem2 === 1){
+        console.log("you already have that item")
+      } else{
+        console.log("have" + this.haveItem2)
+        console.log("money" + this.game.money)
+        console.log("not enough money")
+      }
+    }
   }.bind(this)
 }

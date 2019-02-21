@@ -41,7 +41,6 @@ function MapTracker(game){
         [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
         [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
     ]
-
     this.hTiles = 15
     this.vTiles = 30
 }
@@ -95,6 +94,7 @@ MapTracker.prototype.checkEnemyLeft = function() {
 }
 
 MapTracker.prototype.checkTileStatus = function(direction) {
+    
     if(direction===3){ //Dirección hacia abajo
         if(this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] === 2){
             this.caveMatrix[this.playerLocationY + 1][this.playerLocationX] = 3

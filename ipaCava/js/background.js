@@ -14,7 +14,3 @@ function Background(game) {
 Background.prototype.draw = function() {
   this.game.ctx.drawImage(this.back, this.x, this.y, this.width, this.height)
 };
-
-Background.prototype.move = function() {
-  
-};

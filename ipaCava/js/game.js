@@ -41,7 +41,7 @@ var Game = {
         this.framesCounter = 0
       }
 
-      if (this.framesCounter % 100 === 0){
+      if (this.framesCounter % 50 === 0){
         this.enemy.e1randomDir = Math.floor(Math.random() * 4) + 1  
         console.log(this.enemy.e1randomDir)
         this.enemy.moveEnemy()
