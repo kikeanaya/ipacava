@@ -13,7 +13,7 @@ function Player(game) {
   this.y = this.game.tileSize * 5
 
   this.haveItem1 = 0
-  this.haveitem2 = 0
+  this.haveItem2 = 0
 
   this.setListeners();
 }
@@ -134,7 +134,6 @@ Player.prototype.setListeners = function() {
         if(this.game.money >= 300 && this.haveItem1 === 0){
           this.haveItem1 = 1
           console.log("compra el item 1")
-          console.log(this.haveItem1)
           this.game.money -= 300
         } else if(this.haveItem1 === 1){
           console.log("you already have that item")
@@ -142,7 +141,17 @@ Player.prototype.setListeners = function() {
           console.log("not enough money")
         }
     } else if(event.keyCode === this.game.keys.ITEM2 && this.game.menuActivated === 1){
-      console.log("compra el item 2")
+        if(this.game.money >= 500 && this.haveItem2 === 0){
+          this.haveItem2 = 1
+          console.log("compra el item 2")
+          this.game.money -= 500
+        } else if(this.haveItem2 === 1){
+          console.log("you already have that item")
+        } else{
+          console.log("have" + this.haveItem2)
+          console.log("money" + this.game.money)
+          console.log("not enough money")
+        }
   }
   }.bind(this)
 }

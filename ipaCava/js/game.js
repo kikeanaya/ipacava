@@ -81,6 +81,10 @@ var Game = {
     if (this.player.haveItem1 === 1){
       this.ui.drawItem1()
     }
+
+    if (this.player.haveItem2 === 1){
+      this.ui.drawItem2()
+    }
   },
   detectGroundCollision: function(){
     var happens
