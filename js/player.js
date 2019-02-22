@@ -141,18 +141,18 @@ Player.prototype.setListeners = function() {
       }
     } 
     else if (event.keyCode === this.game.keys.ITEM1 && this.game.menuActivated === 1) {
-      if(this.game.money >= 300 && this.haveItem1 === 0){
+      if(this.game.money >= 400 && this.haveItem1 === 0){
         this.haveItem1 = 1                                  // Buys Item 1
-        this.game.money -= 300                              // Substracts money from player
+        this.game.money -= 400                              // Substracts money from player
       } else if(this.haveItem1 === 1){                      // Checks if you already have the item
       } else{
                                                             // Tells the user that they don't have enough money
       }
     } 
     else if(event.keyCode === this.game.keys.ITEM2 && this.game.menuActivated === 1){
-      if(this.game.money >= 500 && this.haveItem2 === 0){
+      if(this.game.money >= 1000 && this.haveItem2 === 0){
         this.haveItem2 = 1                                  // Buys Item 2
-        this.game.money -= 500                              // Substracts money from player
+        this.game.money -= 1000                              // Substracts money from player
       } else if(this.haveItem2 === 1){                      // Checks if you already have the item
       } else{
                                                             // Tells the user that they don't have enough money

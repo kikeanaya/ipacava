@@ -18,4 +18,12 @@ body {
   border-color: #fcdeae;
   font-family: "Love Ya Like A Sister";
   font-size: 30px;
+  cursor: pointer;
+}
+
+#logo {
+  position: fixed;
+  top: 220px;
+  left: 220px;
+  width: 75%;
 }
