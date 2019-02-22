@@ -209,8 +209,19 @@ Player.prototype.drawBones = function(){
 
 Player.prototype.checkBoneHit = function(){
   this.bones.forEach(function(bone){                // Checks bones collision with enemy
-    if(bone.x>this.game.enemy.enemy1x && bone.x<this.game.enemy.enemy1x+15){
+    if(bone.x>this.game.enemy.enemy1x && bone.x<this.game.enemy.enemy1x+15&&this.haveItem2 === 0){
       if(bone.y>this.game.enemy.enemy1y&&bone.y<this.game.enemy.enemy1y+this.game.tileSize){
+      if(this.haveItem1 === 1 && this.haveItem2 === 0){
+        bone.r1= 0
+        this.game.enemy.enemy1Health-=10 
+      }else if(this.haveItem1 === 1 && this.haveItem2 === 1){
+        bone.r2=0
+        this.game.enemy.enemy1Health-=100
+      }
+     }
+    } 
+    if(bone.x>this.game.enemy.enemy1x && bone.x<this.game.enemy.enemy1x+10){
+      if(bone.y>this.game.enemy.enemy1y&&bone.y<this.game.enemy.enemy1y+this.game.tileSize&&this.haveItem2 === 1){
       if(this.haveItem1 === 1 && this.haveItem2 === 0){
         bone.r1= 0
         this.game.enemy.enemy1Health-=10 
