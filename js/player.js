@@ -160,8 +160,6 @@ Player.prototype.setListeners = function() {
     }else if (event.keyCode === this.game.keys.RETRY) {
       this.game.start()
     }
-    else if(event.keyCode === this.game.keys.HOME){
-    }
     else if (event.keyCode == this.game.keys.SHOOTRIGHT && this.haveItem1 === 1 && this.haveItem2 === 0) {
       this.shootRight()
       this.game.boneSound.play()
@@ -211,7 +209,7 @@ Player.prototype.drawBones = function(){
 
 Player.prototype.checkBoneHit = function(){
   this.bones.forEach(function(bone){                // Checks bones collision with enemy
-    if(bone.x>this.game.enemy.enemy1x && bone.x<this.game.enemy.enemy1x+10){
+    if(bone.x>this.game.enemy.enemy1x && bone.x<this.game.enemy.enemy1x+15){
       if(bone.y>this.game.enemy.enemy1y&&bone.y<this.game.enemy.enemy1y+this.game.tileSize){
       if(this.haveItem1 === 1 && this.haveItem2 === 0){
         bone.r1= 0

@@ -11,7 +11,6 @@ var Game = {
     ITEM1 : 49,
     ITEM2 : 50,
     RETRY : 89,
-    HOME : 78,
     SHOOTRIGHT : 88,
     SHOOTLEFT : 90,
     CONTROLS : 67
@@ -36,7 +35,6 @@ var Game = {
     this.moneySound.volume = 0.6
     this.backMusic.volume = 0.7
 
-
     this.start()
   }, 
   start: function () {
@@ -57,7 +55,6 @@ var Game = {
         this.enemy.e1randomDir = Math.floor(Math.random() * 4) + 1  
         this.enemy.moveEnemy()
         this.incrementSeconds()
-
       }
 
       this.mapTracker.setPlayerLocation()

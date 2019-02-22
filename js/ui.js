@@ -104,21 +104,13 @@ Ui.prototype.endScreen = function(){
     this.game.ctx.fillStyle = "white"
     this.game.ctx.fillText("YOU FAILED. TRY AGAIN?", 450, 230)
 
-    this.game.ctx.font = "35px Love Ya Like A Sister"
+    this.game.ctx.font = "40px Love Ya Like A Sister"
     this.game.ctx.fillStyle = "white"
-    this.game.ctx.fillText("PRESS 'Y'", 500, 400)
+    this.game.ctx.fillText("PRESS 'Y'", 640, 380)
 
-    this.game.ctx.font = "35px Love Ya Like A Sister"
+    this.game.ctx.font = "40px Love Ya Like A Sister"
     this.game.ctx.fillStyle = "white"
-    this.game.ctx.fillText("TO RESTART", 480, 450)
-
-    this.game.ctx.font = "35px Love Ya Like A Sister"
-    this.game.ctx.fillStyle = "white"
-    this.game.ctx.fillText("PRESS 'N'", 800, 400)
-
-    this.game.ctx.font = "35px Love Ya Like A Sister"
-    this.game.ctx.fillStyle = "white"
-    this.game.ctx.fillText("FOR HOME SCREEN", 730, 450)
+    this.game.ctx.fillText("TO RESTART", 610, 450)
 }
 
 Ui.prototype.winScreen = function(){
