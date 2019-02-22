@@ -12,8 +12,9 @@ var Game = {
     ITEM2 : 50,
     RETRY : 89,
     HOME : 78,
-    SHOOTRIGHT: 88,
-    SHOOTLEFT: 90
+    SHOOTRIGHT : 88,
+    SHOOTLEFT : 90,
+    CONTROLS : 67
   },
   init: function(id){
     this.canvas = document.getElementById(id)
@@ -71,7 +72,7 @@ var Game = {
       }
       if(this.enemy.enemy1Health <= 0){
         this.stop()
-        this.ui.winScreen()
+        this.ui.winScreen() 
       }
 
     }.bind(this), 1000 / this.fps)
@@ -87,8 +88,10 @@ var Game = {
     this.depth = 0
     this.money = 0
     this.menuActivated = 0 // 0: not activated, 1: activated
+    this.controlsActivated = 0
     this.endActivated = 0
     this.seconds = 0
+  
   },
   clear: function () {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
@@ -110,6 +113,10 @@ var Game = {
 
     if (this.menuActivated === 1){
       this.ui.drawShop()
+    }
+
+    if (this.controlsActivated === 1){
+      this.ui.drawControls()
     }
 
     if (this.player.haveItem1 === 1){

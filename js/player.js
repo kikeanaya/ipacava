@@ -176,6 +176,12 @@ Player.prototype.setListeners = function() {
     }else if (event.keyCode == this.game.keys.SHOOTLEFT && this.haveItem1 === 1 && this.haveItem2 === 1) {
       this.shootLeft()
       this.game.fartSound.play()
+    }else if (event.keyCode == this.game.keys.CONTROLS) {
+      if(this.game.controlsActivated === 1){
+        this.game.controlsActivated = 0
+      } else{
+      this.game.controlsActivated = 1
+      }
     }
   }.bind(this)
 }
@@ -207,7 +213,7 @@ Player.prototype.checkBoneHit = function(){
   this.bones.forEach(function(bone){                // Checks bones collision with enemy
     if(bone.x>this.game.enemy.enemy1x && bone.x<this.game.enemy.enemy1x+10){
       if(bone.y>this.game.enemy.enemy1y&&bone.y<this.game.enemy.enemy1y+this.game.tileSize){
-      if(this.haveItem1 === 1 && this.haveItem1 === 0){
+      if(this.haveItem1 === 1 && this.haveItem2 === 0){
         bone.r1= 0
         this.game.enemy.enemy1Health-=10 
       }else if(this.haveItem1 === 1 && this.haveItem2 === 1){

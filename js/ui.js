@@ -24,6 +24,9 @@ Ui.prototype.drawPlayerHealth = function (){
     this.game.ctx.fillStyle = "#530200"
     this.game.ctx.fillRect(20, 27, 320, 29)
 
+    this.game.ctx.fillStyle = "#530200"
+    this.game.ctx.fillRect(85, 60, 170, 29)
+
     this.game.ctx.font = "25px Love Ya Like A Sister";
     this.game.ctx.fillStyle = "#fcdeae";
     this.game.ctx.fillText("HEALTH: " + this.game.player.health, 30, 50);
@@ -33,6 +36,10 @@ Ui.prototype.drawMoney = function (){
     this.game.ctx.font = "25px Love Ya Like A Sister";
     this.game.ctx.fillStyle = "#fcdeae";
     this.game.ctx.fillText("MONEY: " + this.game.money, 200, 50);
+
+    this.game.ctx.font = "15px Love Ya Like A Sister";
+    this.game.ctx.fillStyle = "#fcdeae";
+    this.game.ctx.fillText("PRESS 'C' FOR CONTROLS", 93, 80);
 }
 
 Ui.prototype.drawShop = function (){
@@ -73,62 +80,82 @@ Ui.prototype.drawShop = function (){
 }
 
 Ui.prototype.drawItem1 = function(){
-    this.game.ctx.drawImage(this.item1, 400, 27, 30, 30)
+    this.game.ctx.drawImage(this.item1, 360, 27, 30, 30)
 }
 
 Ui.prototype.drawItem2 = function(){
-    this.game.ctx.drawImage(this.item2, 500, 27, 30, 30)
+    this.game.ctx.drawImage(this.item2, 410, 27, 30, 32)
 }
 
 Ui.prototype.drawEnemyHealth = function(){
     this.game.ctx.fillStyle = "#a30910"
     this.game.ctx.fillRect(this.game.enemy.enemy1x +22, this.game.enemy.enemy1y-37, 55, 35)
     
-    this.game.ctx.font = "25px Love Ya Like A Sister";
-    this.game.ctx.fillStyle = "white";
-    this.game.ctx.fillText(this.game.enemy.enemy1Health, this.game.enemy.enemy1x+30, this.game.enemy.enemy1y-11);
+    this.game.ctx.font = "25px Love Ya Like A Sister"
+    this.game.ctx.fillStyle = "white"
+    this.game.ctx.fillText(this.game.enemy.enemy1Health, this.game.enemy.enemy1x+30, this.game.enemy.enemy1y-11)
 }
 
 Ui.prototype.endScreen = function(){
     this.game.ctx.fillStyle = "red"
     this.game.ctx.fillRect(400, 110, 650, 440)
 
-    this.game.ctx.font = "55px Love Ya Like A Sister";
-    this.game.ctx.fillStyle = "white";
-    this.game.ctx.fillText("YOU FAILED. TRY AGAIN?", 450, 230);
+    this.game.ctx.font = "55px Love Ya Like A Sister"
+    this.game.ctx.fillStyle = "white"
+    this.game.ctx.fillText("YOU FAILED. TRY AGAIN?", 450, 230)
 
-    this.game.ctx.font = "35px Love Ya Like A Sister";
-    this.game.ctx.fillStyle = "white";
-    this.game.ctx.fillText("PRESS 'Y'", 500, 400);
+    this.game.ctx.font = "35px Love Ya Like A Sister"
+    this.game.ctx.fillStyle = "white"
+    this.game.ctx.fillText("PRESS 'Y'", 500, 400)
 
-    this.game.ctx.font = "35px Love Ya Like A Sister";
-    this.game.ctx.fillStyle = "white";
-    this.game.ctx.fillText("TO RESTART", 480, 450);
+    this.game.ctx.font = "35px Love Ya Like A Sister"
+    this.game.ctx.fillStyle = "white"
+    this.game.ctx.fillText("TO RESTART", 480, 450)
 
-    this.game.ctx.font = "35px Love Ya Like A Sister";
-    this.game.ctx.fillStyle = "white";
-    this.game.ctx.fillText("PRESS 'N'", 800, 400);
+    this.game.ctx.font = "35px Love Ya Like A Sister"
+    this.game.ctx.fillStyle = "white"
+    this.game.ctx.fillText("PRESS 'N'", 800, 400)
 
-    this.game.ctx.font = "35px Love Ya Like A Sister";
-    this.game.ctx.fillStyle = "white";
-    this.game.ctx.fillText("FOR HOME SCREEN", 730, 450);
+    this.game.ctx.font = "35px Love Ya Like A Sister"
+    this.game.ctx.fillStyle = "white"
+    this.game.ctx.fillText("FOR HOME SCREEN", 730, 450)
 }
 
 Ui.prototype.winScreen = function(){
     this.game.ctx.fillStyle = "green"
     this.game.ctx.fillRect(400, 110, 650, 440)
 
+    this.game.ctx.font = "50px Love Ya Like A Sister"
+    this.game.ctx.fillStyle = "white"
+    this.game.ctx.fillText("YOU BEAT THE ANNOYING CAT", 425, 230)
+
+    this.game.ctx.font = "40px Love Ya Like A Sister"
+    this.game.ctx.fillStyle = "white"
+    this.game.ctx.fillText("IN " + this.game.seconds + " SECONDS", 620, 290)
+
+    this.game.ctx.font = "35px Love Ya Like A Sister"
+    this.game.ctx.fillStyle = "white"
+    this.game.ctx.fillText("PRESS 'Y' TO RESTART", 570, 480)
+}
+
+Ui.prototype.drawControls = function(){
+    this.game.ctx.fillStyle = "#530200"
+    this.game.ctx.fillRect(20, 60, 320, 350)
+
     this.game.ctx.font = "50px Love Ya Like A Sister";
-    this.game.ctx.fillStyle = "white";
-    this.game.ctx.fillText("YOU BEAT THE ANNOYING CAT", 425, 230);
+    this.game.ctx.fillStyle = "#fcdeae";
+    this.game.ctx.fillText("CONTROLS", 75, 120);
 
-    this.game.ctx.font = "40px Love Ya Like A Sister";
-    this.game.ctx.fillStyle = "white";
-    this.game.ctx.fillText("IN " + this.game.seconds + " SECONDS", 620, 290);
+    this.game.ctx.font = "20px Love Ya Like A Sister";
+    this.game.ctx.fillStyle = "#fcdeae";
+    this.game.ctx.fillText("- 'Z': SHOOT LEFT", 65, 170);
+    this.game.ctx.fillText("- 'X': SHOOT RIGHT", 65, 195);
+    this.game.ctx.fillText("- 'S': OPEN SHOP", 65, 220);
+    this.game.ctx.fillText("- '↑': MOVE UP", 65, 245);
+    this.game.ctx.fillText("- '←': MOVE LEFT", 65, 270);
+    this.game.ctx.fillText("- '↓': MOVE DOWN", 65, 295);
+    this.game.ctx.fillText("- '→': MOVE RIGHT", 65, 320);
 
-    this.game.ctx.font = "35px Love Ya Like A Sister";
-    this.game.ctx.fillStyle = "white";
-    this.game.ctx.fillText("PRESS 'Y' TO RESTART", 570, 480);
 }
 
 Ui.prototype.drawSeconds = function(){
