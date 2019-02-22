@@ -74,11 +74,11 @@ Ui.prototype.drawItem2 = function(){
 
 Ui.prototype.drawEnemyHealth = function(){
     this.game.ctx.fillStyle = "green"
-    this.game.ctx.fillRect(this.game.enemy.enemy1x, this.game.enemy.enemy1y-22, 90, 15)
+    this.game.ctx.fillRect(this.game.enemy.enemy1x +22, this.game.enemy.enemy1y-37, 55, 35)
     
-    this.game.ctx.font = "15px Love Ya Like A Sister";
+    this.game.ctx.font = "25px Love Ya Like A Sister";
     this.game.ctx.fillStyle = "red";
-    this.game.ctx.fillText("HEALTH: " + this.game.enemy.enemy1Health, this.game.enemy.enemy1x+5, this.game.enemy.enemy1y-10);
+    this.game.ctx.fillText(this.game.enemy.enemy1Health, this.game.enemy.enemy1x+30, this.game.enemy.enemy1y-11);
 }
 
 Ui.prototype.endScreen = function(){
