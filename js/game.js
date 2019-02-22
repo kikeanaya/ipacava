@@ -32,6 +32,8 @@ var Game = {
     this.moneySound = new Audio("snd/money.wav")
     this.boneSound = new Audio("snd/bone.wav")
     this.fartSound = new Audio("snd/fart.wav")
+    this.hitSound = new Audio("snd/hit.wav")
+
     this.moneySound.volume = 0.6
     this.backMusic.volume = 0.7
 

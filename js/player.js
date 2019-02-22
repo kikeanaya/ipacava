@@ -214,9 +214,11 @@ Player.prototype.checkBoneHit = function(){
       if(this.haveItem1 === 1 && this.haveItem2 === 0){
         bone.r1= 0
         this.game.enemy.enemy1Health-=10 
+        this.game.hitSound.play()
       }else if(this.haveItem1 === 1 && this.haveItem2 === 1){
         bone.r2=0
         this.game.enemy.enemy1Health-=100
+        this.game.hitSound.play()
       }
      }
     } 
@@ -225,9 +227,11 @@ Player.prototype.checkBoneHit = function(){
       if(this.haveItem1 === 1 && this.haveItem2 === 0){
         bone.r1= 0
         this.game.enemy.enemy1Health-=10 
+        this.game.hitSound.play()
       }else if(this.haveItem1 === 1 && this.haveItem2 === 1){
         bone.r2=0
         this.game.enemy.enemy1Health-=100
+        this.game.hitSound.play()
       }
      }
     } 
