@@ -55,6 +55,7 @@ var Game = {
         this.enemy.e1randomDir = Math.floor(Math.random() * 4) + 1  
         this.enemy.moveEnemy()
         this.incrementSeconds()
+        console.log(this.mapTracker.caveMatrix)
       }
 
       this.mapTracker.setPlayerLocation()
