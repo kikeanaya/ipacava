@@ -25,8 +25,8 @@ function Cave(game) {
   this.ipaSprites = new Image()
   this.ipaSprites.src = "img/ipaSprites.png"
 
-  this.ipaSprites.frames = 3;
-  this.ipaSprites.frameIndex = 0;
+  this.ipaSprites.frames = 3
+  this.ipaSprites.frameIndex = 0
 
   this.numberOfHTiles = 15
   this.numberOfVTiles = 30  
@@ -50,9 +50,8 @@ Cave.prototype.draw = function() {
                     this.game.player.y-5,
                     this.game.tileSize+10,
                     this.game.tileSize+10
-                  );
-                
-                  this.animateImg();
+                  )
+                  this.animateImg()
                 this.refX+=this.game.tileSize
             } else if(this.game.mapTracker.caveMatrix[i][j] === 2){
                 this.game.ctx.drawImage(this.tile, this.refX, this.refY, this.game.tileSize, this.game.tileSize)
@@ -75,7 +74,7 @@ Cave.prototype.draw = function() {
                     this.game.enemy.enemy1y-5,
                     this.game.tileSize+10,
                     this.game.tileSize+10
-                  );
+                  )
                   this.refX+=this.game.tileSize
             } else if(this.game.mapTracker.caveMatrix[i][j] === 6){
                 this.game.ctx.drawImage(this.jewelTile, this.refX, this.refY, this.game.tileSize, this.game.tileSize)
@@ -124,11 +123,9 @@ Cave.prototype.drawBrokenJewel = function(direction) {
 }
 
 Cave.prototype.animateImg = function() {
-    // se va cambiando el frame. Cuanto mayor es el módulo, mas lento se mueve el personaje
     if (this.game.framesCounter % 40 === 0) {
-      this.ipaSprites.frameIndex += 1;
+      this.ipaSprites.frameIndex += 1
   
-      // Si el frame es el último, se vuelve al primero
-      if (this.ipaSprites.frameIndex > 2) this.ipaSprites.frameIndex = 0;
+      if (this.ipaSprites.frameIndex > 2) this.ipaSprites.frameIndex = 0
     }
-  };
+  }

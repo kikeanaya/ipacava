@@ -7,52 +7,52 @@ function Ui(game){
     this.item2 = new Image()
     this.item2.src = "img/item2.png"
 
-    this.itemsWidth = 200
-    this.itemsHeight = 200
+    this.itemsWidth = 150
+    this.itemsHeight = 150
 }
 
 Ui.prototype.drawDepth = function (){
-    this.game.ctx.fillStyle = "grey"
+    this.game.ctx.fillStyle = "#530200"
     this.game.ctx.fillRect(1255, 27, 150, 29)
 
     this.game.ctx.font = "25px Love Ya Like A Sister";
-    this.game.ctx.fillStyle = "white";
+    this.game.ctx.fillStyle = "#fcdeae";
     this.game.ctx.fillText("DEPTH: " +this.game.depth + "m", 1262, 50);
 }
 
 Ui.prototype.drawPlayerHealth = function (){
-    this.game.ctx.fillStyle = "grey"
+    this.game.ctx.fillStyle = "#530200"
     this.game.ctx.fillRect(20, 27, 310, 29)
 
     this.game.ctx.font = "25px Love Ya Like A Sister";
-    this.game.ctx.fillStyle = "white";
+    this.game.ctx.fillStyle = "#fcdeae";
     this.game.ctx.fillText("HEALTH: " + this.game.player.health, 30, 50);
 }
 
 Ui.prototype.drawMoney = function (){
     this.game.ctx.font = "25px Love Ya Like A Sister";
-    this.game.ctx.fillStyle = "white";
+    this.game.ctx.fillStyle = "#fcdeae";
     this.game.ctx.fillText("MONEY: " + this.game.money, 200, 50);
 }
 
 Ui.prototype.drawShop = function (){
-    this.game.ctx.fillStyle = "grey"
+    this.game.ctx.fillStyle = "#530200"
     this.game.ctx.fillRect(500, 210, 500, 350)
 
     this.game.ctx.font = "30px Love Ya Like A Sister";
-    this.game.ctx.fillStyle = "white";
+    this.game.ctx.fillStyle = "#fcdeae";
     this.game.ctx.fillText("PRESS 1 TO BUY:", 540, 270);
     
-    this.game.ctx.drawImage(this.item1, 532, 285, this.itemsWidth, this.itemsHeight)
+    this.game.ctx.drawImage(this.item1, 562, 305, this.itemsWidth, this.itemsHeight)
 
     this.game.ctx.font = "30px Love Ya Like A Sister";
-    this.game.ctx.fillStyle = "white";
+    this.game.ctx.fillStyle = "#fcdeae";
     this.game.ctx.fillText("PRESS 2 TO BUY:", 770, 270);
 
-    this.game.ctx.drawImage(this.item2, 764, 285, this.itemsWidth, this.itemsHeight)
+    this.game.ctx.drawImage(this.item2, 794, 305, this.itemsWidth, this.itemsHeight)
 
     this.game.ctx.font = "25px Love Ya Like A Sister";
-    this.game.ctx.fillStyle = "white";
+    this.game.ctx.fillStyle = "#fcdeae";
     this.game.ctx.fillText("PRESS 'S' TO EXIT SHOP", 640, 530);
 }
 

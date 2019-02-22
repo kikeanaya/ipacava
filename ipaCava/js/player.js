@@ -163,10 +163,10 @@ Player.prototype.setListeners = function() {
     else if(event.keyCode === this.game.keys.HOME){
     }
     else if (event.keyCode == this.game.keys.SHOOTRIGHT && this.haveItem1 === 1) {
-      this.shootRight();
+      this.shootRight()
       this.game.boneSound.play()
     }else if (event.keyCode == this.game.keys.SHOOTLEFT && this.haveItem1 === 1) {
-      this.shootLeft();
+      this.shootLeft()
       this.game.boneSound.play()
 
     }
@@ -187,7 +187,7 @@ Player.prototype.shootLeft = function() {
 
 Player.prototype.drawBones = function(){
   this.bones = this.bones.filter(function (bone) {  // Deletes bones out of canvas
-    if(bone.x <= 1280 && bone.x>0){
+    if(bone.x <= 1580 && bone.x>0){
       return true
     } 
 
