@@ -28,14 +28,19 @@ var Game = {
 
     this.tileSize = Math.floor(this.canvas.width / 15)
 
+    this.backMusic = new Audio("snd/backmusic.mp3")
     this.moneySound = new Audio("snd/money.wav")
     this.boneSound = new Audio("snd/bone.wav")
+    this.fartSound = new Audio("snd/fart.wav")
+    this.moneySound.volume = 0.6
+    this.backMusic.volume = 0.7
 
 
     this.start()
   }, 
   start: function () {
   
+    this.backMusic.play()
     this.reset()
 
     this.interval = setInterval(function () {
@@ -90,6 +95,7 @@ var Game = {
   },
   stop: function () {
     clearInterval(this.interval);
+    this.backMusic.pause()
   }, 
   drawAll: function(){
     this.background.draw()

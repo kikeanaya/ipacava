@@ -22,7 +22,7 @@ Ui.prototype.drawDepth = function (){
 
 Ui.prototype.drawPlayerHealth = function (){
     this.game.ctx.fillStyle = "#530200"
-    this.game.ctx.fillRect(20, 27, 310, 29)
+    this.game.ctx.fillRect(20, 27, 320, 29)
 
     this.game.ctx.font = "25px Love Ya Like A Sister";
     this.game.ctx.fillStyle = "#fcdeae";
@@ -41,7 +41,7 @@ Ui.prototype.drawShop = function (){
 
     this.game.ctx.font = "30px Love Ya Like A Sister";
     this.game.ctx.fillStyle = "#fcdeae";
-    this.game.ctx.fillText("PRESS 1 TO BUY:", 540, 270);
+    this.game.ctx.fillText("PRESS '1' TO BUY:", 540, 270);
 
     this.game.ctx.strokeStyle = "#fcdeae"
     this.game.ctx.lineWidth = 5
@@ -49,19 +49,27 @@ Ui.prototype.drawShop = function (){
     
     this.game.ctx.drawImage(this.item1, 562, 305, this.itemsWidth, this.itemsHeight)
 
+    this.game.ctx.font = "15px Love Ya Like A Sister";
+    this.game.ctx.fillStyle = "#fcdeae";
+    this.game.ctx.fillText("PRICE: 400", 540, 490);
+
     this.game.ctx.strokeStyle = "#fcdeae"
     this.game.ctx.lineWidth = 5
     this.game.ctx.strokeRect(777, 290, 180, 180)
 
     this.game.ctx.font = "30px Love Ya Like A Sister";
     this.game.ctx.fillStyle = "#fcdeae";
-    this.game.ctx.fillText("PRESS 2 TO BUY:", 770, 270);
+    this.game.ctx.fillText("PRESS '2' TO BUY:", 765, 270);
 
     this.game.ctx.drawImage(this.item2, 784, 295, this.itemsWidth+20, this.itemsHeight+20)
+    
+    this.game.ctx.font = "15px Love Ya Like A Sister";
+    this.game.ctx.fillStyle = "#fcdeae";
+    this.game.ctx.fillText("PRICE: 1000", 775, 490);
 
     this.game.ctx.font = "25px Love Ya Like A Sister";
     this.game.ctx.fillStyle = "#fcdeae";
-    this.game.ctx.fillText("PRESS 'S' TO EXIT SHOP", 640, 530);
+    this.game.ctx.fillText("PRESS 'S' TO EXIT SHOP", 640, 535);
 }
 
 Ui.prototype.drawItem1 = function(){
@@ -120,7 +128,7 @@ Ui.prototype.winScreen = function(){
 
     this.game.ctx.font = "35px Love Ya Like A Sister";
     this.game.ctx.fillStyle = "white";
-    this.game.ctx.fillText("PRESS 'Y' TO RESTART", 570, 400);
+    this.game.ctx.fillText("PRESS 'Y' TO RESTART", 570, 480);
 }
 
 Ui.prototype.drawSeconds = function(){
